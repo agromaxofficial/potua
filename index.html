@@ -1,4 +1,3 @@
-<?php setcookie("FBpixel", $_GET["fbpixel"], time()+60*60*24); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +12,11 @@
     <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
 	
 	<script type="text/javascript"> 
-document.cookie = 'name=Вася; path=/';
+	var email = $_GET('fbpixel')
+var date = new Date;
+date.setDate(date.getDate() + 15);
+date = date.toUTCString();
+document.cookie = 'name=Вася; path=/; expires='+date;
 </script>
 
 
