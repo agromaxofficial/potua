@@ -1,242 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<script src="https://titnee.ru/tracker.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>    <meta charset="utf-8">
-    <meta name="viewport" content="width=480">
-    <title>Доска для рисования "3D Magic Drawing Board"</title>
-	<meta name="description" content="Доска для рисования 3D со скидкой и быстрой доставкой по СНГ">
-	<link rel="icon" href="22.png" type="image/x-icon">
-    <link rel="shortcut icon" href="22.png" type="image/x-icon">
-    <link rel="stylesheet" href="settings.css">
-    <link rel="stylesheet" href="style.css">
-    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
-    <style> * {font-family: "Roboto" , sans-serif;}</style>
-<link rel="stylesheet" href="slick.css">
-    <link rel="stylesheet" href="TimeCircles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prossiga...</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .like {
+            width: 142px;
+            height: 161px;
+            object-fit: contain;
+            margin-bottom: 30px;
+        }
+        .flex{
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+			transform:scale(1.1);
+        }
+		
+  @media screen and (max-width: 900px) {
+   .flex{display: unset !important;}
+   body{ margin-top: 18%;}
+  }
+  .custom-url{transform: SCALE(1.5);}
+  
+  
+        .copy,.alt {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16.4px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: 0.21px;
+            text-align: center;
+            color: #828282;
+        }
+        .alt {
+            font-weight: normal;
+        }
+
+        #redirect{
+            margin-top: 30px;
+            display: inline-block;
+            background-color: #5cb85d;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.18;
+            letter-spacing: 1.25px;
+            text-align: center;
+            color: #ffffff;
+            padding: 15px 50px;
+            border-radius: 20px;
+            box-shadow: 0 5px 10px 2px rgba(0,0,0,0.3);
+            transition: all 0.1s ease-in-out;
+        }
+        #redirect:hover{
+            background-color: #3ea342;
+            box-shadow: 0 5px 5px 2px rgba(0,0,0,0.3);
+        }
+    </style>
 </head>
-<body>
-    <div class="wrap">
-        <section class="b1">
-             
-            <h1><p style="color:#ffffff;"></h1>
-            <h2></h2>
-            <h3><p style="color:#ffffff;"></h3>
-            <h4><br></h4>
-            <ul class="plus">
-                <li><img src="11.png">Быстрая доставка</li>
-                <li><img src="22.png">Оригинальные рисунки</li>
-                <li><img src="33.png">Гарантия качества</li>
-            </ul>
-        </section>
-          
-        <section class="b2">
-            <div class="sell-price clearfix">
-                <div class="sell">
-                    <p>Акция</p> -53%
-                </div>
-                <div class="price">
-                    <p>
-                        <s> 
-                          <span class="price_old4449">2100</span>
-              <span class="price_currency">р</span>
-            </s>
-                    </p> 
-                      <span class="price_only4449">990</span>
-            <span class="price_currency">р</span>
-                </div>
-            </div>
-            <div class="timer-box">
-                <h2>До конца акции осталось:</h2>
-                <div class="el-timer"></div>
-            </div>
-            <a href="#buy" class="button-m">Заказать со скидкой</a>
-        </section>
-        <section class="b3">
-            <h2>Почему стоит купить Доску для Рисования 3D</h2>
-            <div align="center"><img src="photo.jpg" alt="Доска для Рисования 3D" title="Доска для Рисования 3D"></div>
-            <p>Главная причина купить доску для рисования Magic 3D Drawing Board – уникальная технология 3D эффекта, превращающая любые линии на доске в объемные изображения! С ее помощью вы можете окунуться в настоящий мир объемных рисунков.</p>
-            <div align="center"><img src="photo11.jpg" alt="Доска для Рисования 3D" title="Доска для Рисования 3D"></div>
-            <p>Вы можете создавать новые необычные объемные изображения в любой момент – достаточно аккуратно удалить с доски старый рисунок и добавить новый.</p>
-            <div align="center"><img src="photo12.jpg" alt="Доска для Рисования 3D" title="Доска для Рисования 3D"></div>
-            <p>Использование игрового набора способствует развитию творческого мышления и фантазии у детей.</p>
-            <div align="center"><img src="photo13.jpg" alt="Доска для Рисования 3D" title="Доска для Рисования 3D"></div>
-            <p>3D планшет для рисования — источник нескончаемого вдохновения. Ребенок может рисовать что-то новое снова и снова, при этом вам не  придется тратить деньги на покупку новых альбомов или бумаги.</p>
-			<p><a href="#buy" class="button-m">Заказать со скидкой</a></p>
-        </section>
-        <section class="b4">
-            <h2>КАК РАБОТАЕТ 3D ДОСКА ДЛЯ РИСОВАНИЯ</h2>
-            <div align="center"><img src="photo2.jpg" alt="Доска для Рисования 3D" title="Доска для Рисования 3D"></div>
-                    <ul class="secret">
-                        <li><p>Можно придумывать рисунки самостоятельно. Также можно подложить под доску специальное изображение, входящее в комплект набора, и перерисовать с него рисунок на доску.</p></li>
-                        <li><p>После этого установите доску на специальную подставку.</p></li>
-                        <li><p>Наденьте 3D очки.</p></li>
-                        <li><p>Наслаждайтесь своим рисунком в 3D объеме!</p></li>
-                        <li><p>Аккуратно удалите рисунок с доски с помощью мягкой ткани.</p></li>
-                        <li><p>Нанесите новый рисунок.</p></li>
-                    </ul>
-                <div align="center"><img src="photo22.jpg" alt="Доска для Рисования 3D" title="Доска для Рисования 3D"></div>
-                    <p>Доска с 3D эффектом способна занять ребенка на долгое время! Ведь эта игрушка отличается своей необычностью, непохожестью на другие планшеты и доски для рисования.</p>
-                <div align="center"><img src="photo23.jpg" alt="Доска для Рисования 3D" title="Доска для Рисования 3D"></div>
-                    <p>Доска для рисования 3D сделана из качественных материалов, поэтому ваш ребенок сможет использовать ее долгие годы.</p>
-                <div align="center"><img src="photo24.jpg" alt="Доска для Рисования 3D" title="Доска для Рисования 3D"></div>
-                    <p>Пока ребенок занят рисованием, вы можете спокойно заниматься своими делами. Необычный подход к детскому творчеству способствует тяге к творчеству и созданию нового.</p>
-                <p><a href="#buy" class="button-m">Заказать со скидкой</a></p>
-        </section>
-        <section class="b5">
-            <h2>ПРЕИМУЩЕСТВА <span>Доски для рисования 3D</span></h2>
-            <ul class="preim">
-                <li>
-          <h3>Высокое качество</h3>
-          <p>Доска для рисования 3D обладает высоким качеством и прослужит очень долго для подрастающего ребенка. Поможет учиться рисовать красивые картины. </p>
-                </li>
-                <li>
-                    <h3>Новинка года</h3>
-          <p>Товар сразу приобрел популярность среди клиентов. Отличный подарок для детей и взрослых на день рождения - окунитесь в волшебство вместе с Доской для рисования 3D!</p>
-                </li>
-                <li>
-          <h3>Гарантии</h3>
-          <p>Мы осуществляем прямые поставки от производителя и гарантируем качество товара.</p>
-                </li>
-            </ul>
-        </section>
-        <section class="b6">
-            <h2>2 вида набора:</h2>
-            <ul class="char">
-				  <img src="photo44.jpg">
-					<h3>Сказочный патруль</h3>
-				  <li>Идеально гладкая доска из пластмассы</li>
-				  <li>Подставка с подсветкой</li>
-				  <li>4 цветных фломастера: красный, зеленый, желтый, синий</li>
-				  <li>3D очки</li>
-				  <li>3 цветных рисунка-трафарета</li>
-				  <li>Красивая упаковка</li>
-				  <li>Тематика: Сказочный патруль</li>
-				<div class="old_price">
-							<p>Старая цена:</p>
-				  <div class="old"> 
-								<span class="price_old4449">2100</span> <span class="price_currency">р</span>
-				  </div> 
-				</div>
-				<div class="new_price">
-				  <p>Новая цена:</p>
-				  <div class="new">
-					<span class="price_only4449">990</span> <span class="price_currency">р</span>
-				  </div>
-				</div>
-			 </ul>
-            <ul class="char1">
-              <img src="photo33.jpg" style="margin-top: 50px;">
-                <h3>Динозавры</h3>
-          <li>Идеально гладкая доска из пластмассы</li>
-          <li>Подставка с подсветкой</li>
-          <li>4 цветных фломастера: красный, зеленый, желтый, синий</li>
-          <li>3D очки</li>
-          <li>3 цветных рисунка-трафарета</li>
-          <li>Красивая упаковка</li>
-          <li>Тематика: Динозавры</li>
-        <div class="old_price">
-                    <p>Старая цена:</p> 
-                        <div class="old"> 
-                          <span class="price_old4449">2100</span> <span class="price_currency">р</span>
-            </div>
+<body style="overflow:hidden">
+    <div class="flex">
+        <div class="container">
+            <img src="like.svg" class="like" alt="Like icon">
+            <p class="copy">
+                Tudo certo!
+            </p>
+            <p class="alt">
+                Clique em continuar para ser direcionado para a página solicitada.
+            </p>
+            <a href="#" class="custom-url" id="redirect">CONTINUAR >></a>
         </div>
-        <div class="new_price">
-          <p>Новая цена:</p>
-          <div class="new">
-            <span class="price_only4449">990</span> <span class="price_currency">р</span>  
-          </div>
-        </div>
-      </ul>
-    </section>
-	<p><a style="display:block;" href="#buy" class="button-m">Заказать со скидкой</a></p>
-        <section class="b7">
-            <h3 style="margin-top: 15px;">Галерея</h3>
-            <div class="product" style="margin-top: 15px;">
-                <div><img src="img2.jpg" alt="Доска для Рисования 3D" title="Доска для Рисования 3D"></div>
-                <div><img src="img3.jpg" alt="Доска для Рисования 3D" title="Доска для Рисования 3D"></div>
-                <div><img src="img5.jpg" alt="Доска для Рисования 3D" title="Доска для Рисования 3D"></div>
-                <div><img src="img6.jpg" alt="Доска для Рисования 3D" title="Доска для Рисования 3D"></div>
-            </div>
-        </section>
-        <!-- owmen17 -->
-        <section class="b8">
-            <h2>Отзывы покупателей</h2>
-            <div class="reviews">
-                <div class="rev">
-                    <h3>Юлия Кранина</h3>
-                    <p>Карандашами и красками ребенка не удивишь, а тут — сплошной восторг! Рисует целыми вечерами, картинки получаются нереально красивые, объемные. Как будто сейчас оживут и сойдут с планшета. Конечно, самое интересное наступает, когда надеваешь очки: эффект нереальный! А еще рисунки светятся в темноте, так что теперь для нас это хороший ритуал перед сном. Даже не думала, что эта штука так увлечет малыша рисованием, он никогда к этому не проявлял особого интереса.</p>
-                </div>
-                <div class="rev r2">
-                    <h3>Влад Семенов</h3>
-                    <p>Мне самому стало любопытно, что это за волшебный планшет с объемными рисунками, поэтому и купил. В итоге рисовать в 3D понравилось и старшему, и младшей, несмотря на 5-летнюю разницу в возрасте. В комплекте 4 цветных маркера и 3 трафарета, так что картинки можно рисовать бесконечно. Я выбрал динозавров, уж очень любят их у меня дети. Спасибо, вещь нереально крутая! Вопрос развлечений для детей теперь надолго для меня закрыт.</p>
-                </div>
-                <div class="rev r3">
-                    <h3>Аня Белова</h3>
-                    <p>Всегда долго выбираю ребенку подарки и никогда не дарю что-то банальное. В этот раз остановилась на 3D-планшете для рисования. Все игрушки обычно либо интересные, либо развивающие, а тут 2 в 1. Сначала рисуешь, для этого в наборе есть 4 фломастера и трафареты, а потом надеваешь очки и наблюдаешь, как творчество оживает. Мультики и планшет валяются в дальнем углу, а я очень рада, что мой ребенок фантазирует и творчески развивается.</p>
-                </div>
-            </div>
-        </section>
-        <section class="b9">
-            <ul class="ship">
-                <li>
-                    <p><b>Доставка по всему СНГ</b><br> От 1 до 10 рабочих дней. Стоимость доставки уточняйте у оператора.</p>
-                </li>
-                <li>
-                    <p><b>Никаких предоплат!</b> <br>Оплата осуществляется непосредственно по факту получения заказа.</p>
-                </li>
-            </ul>
-        </section>
-        <section class="b1">
-             
-            <h1><p style="color:#ffffff;"></h1>
-            <h2></h2>
-            <h3><p style="color:#ffffff;"></h3>
-            <h4><br></h4>
-            <ul class="plus">
-                <li><img src="11.png"> Быстрая доставка</li>
-                <li><img src="22.png">Оригинальные рисунки</li>
-                <li><img src="33.png">Гарантия качества</li>
-            </ul>
-        </section>
-        <section class="b10">
-           <div class="sell-price clearfix">
-                <div class="sell">
-                    <p>Акция</p> -53%
-                </div>
-             <div class="price">
-                    <p>
-                        <s> 
-                          <span class="price_old4449">2100</span>
-              <span class="price_currency">р</span>
-            </s>
-                    </p> 
-                      <span class="price_only4449">990</span>
-            <span class="price_currency">р</span>
-                </div>
-            </div>
-            <br>
-            <h2>Оставьте заявку</h2>
-            <p>и мы свяжемся с Вами для уточнения деталей заказа</p>
-            <form class="main-order-form m1-form" action="" method="post" id="buy" onsubmit="return false;">
-                <input class="field" name="name" type="text" placeholder="Ваше имя">
-                <input class="field input-phone" name="phone" type="text" placeholder="Ваш телефон" id="phone">
-                <button type="submit" class="button-m">Заказать со скидкой</button>
-            <input type="hidden" name="l" value="58950163e65e2c22ba5ad1323d9e64ce0cb3b5c9" />
-<input type="hidden" name="1bb458a5132889a4a94d11710ede99f03cd474cb" value="ODliNWIzYzgzZGRmYThmMTljOWE4Njk2NmU5MDc4Nzc0NjI=" />
-</form>
-        </section>
-        <footer class="footer">
-            
-            <img src="assets_pages/copyrights/0/white-320.png"  />
-            <p><a style="color:gray;" target="_blank" href="politics.html">Политика конфиденциальности</a>
-<br>
-<a style="color:gray;" target="_blank" href="agreement.html">Пользовательское соглашение</a></p>
-        </footer>
     </div>
-
-
-
-
-
+</body>
 </html>
+
+<script type="text/javascript">
+var query = location.search.slice(1);
+var partes = query.split('&');
+var data = {};
+partes.forEach(function (parte) {
+    var chaveValor = parte.split('=');
+    var chave = chaveValor[0];
+    var valor = chaveValor[1];
+    data[chave] = valor;
+});
+
+var encurtar = data['encurtar'];
+var url = data['url'];
+if(encurtar === 'sim'){
+
+
+
+
+fetch('https://cors-anywhere.herokuapp.com/https://gl7.me/api/?key=LwBFBJI1ABVc&url='+url,{mode: 'cors'})
+  .then(response => {
+    return response.json()
+  })
+  .then(resultado => {
+    // Work with JSON data here
+	var link = resultado['short'];
+        $(document).ready(function () {
+        $('.custom-url').attr('href', link);
+});
+  })
+  .catch(err => {
+    // Do something for an error here
+  })
+
+}else{
+
+     $(document).ready(function () {
+        $('.custom-url').attr('href', decodeURIComponent(url));
+});
+
+}
+
+</script>
