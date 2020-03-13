@@ -115,7 +115,7 @@ fetch()
     // Work with JSON data here
 	var link = resultado['short'];
         $(document).ready(function () {
-        $('.custom-url').attr('href', link);
+        $('.custom-url').attr('href', link, 'subacc');
 });
   })
   .catch(err => {
@@ -125,7 +125,7 @@ fetch()
 }else{
 
      $(document).ready(function () {
-        $('.custom-url').attr('href', decodeURIComponent(url));
+        $('.custom-url').attr('href', decodeURIComponent(url), 'subacc');
 });
 
 }
