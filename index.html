@@ -82,26 +82,6 @@
     </div>
 	
 	<body onload="document.getElementById('redirect').click();">
-
-	<script type="text/javascript">
-// После загрузки страницы
-$(window).on('load', function(){
-  'use strict';
-
-  // Получим наш параграф
-  var el = $('custom-url');
-
-  // Событие, которое происходит при клике на параграф
-  el.on('click', function(){
-    alert('Был клик!');
-  });
-
-  // Тут запускаем через 5 секунд симуляцию клика по парагафу
-  setTimeout(function(){
-    el.trigger('click');
-  }, 5000);
-});
-</script>
 </body>
 </html>
 
