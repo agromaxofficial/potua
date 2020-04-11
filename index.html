@@ -8,14 +8,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-url/2.5.3/url.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
 <script>
-	Cookies.set('ff', '77', { 
-  expires: 365,
-  path: '/news/',
+	$(function() {
+		if (url('?fbpixel')) Cookies.set('fbpixel', url('?fbpixel'), {expires: 30, path: '/news/',
   domain: 'm.mydomain.ru',
-  secure: true
-});
+  secure: true});
+	});
 </script>
-
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
