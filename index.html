@@ -5,60 +5,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/js-url/2.5.3/url.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
-<script>
-	$(function() {
-		if (url('?fbpixel')) Cookies.set('fbpixel', url('?fbpixel'), {expires: 30});
-	});
-</script>
 
+<script>
+location.replace("https://juregos.fun/");
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Добро пожаловать ...</title>
-	
-<div>
-     <h1>Parent Window</h1>
-     <iframe src="https://juregos.fun/" width="100" height="100"></iframe>
-     <script>
-         window.addEventListener("message",
-         function (e) {
-            if (e.origin !== 'https://juregos.fun/') { return; }
-               alert(e.data);
-            },false);
-     </script>
-</div>
-
-<div>
-    <h1>iFrame Window</h1>
-    <script type="text/javascript">
-        function createCookie(name, value, days) {
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                var expires = "; expires=" + date.toGMTString();
-            }
-            else var expires = "";
-            document.cookie = name + "=" + value + expires + "; path=/";
-        }
-
-        function readCookie(name) {
-            var nameEQ = name + "=";
-            var ca = document.cookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
-        }
-        createCookie('testCookie', "test content", 1);
-        parent.postMessage(readCookie('testCookie'), "https://juregos.fun/");
-    </script>
-</div>
-
-
     <style>
         *{
             box-sizing: border-box;
