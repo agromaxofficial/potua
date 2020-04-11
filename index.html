@@ -18,7 +18,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Добро пожаловать ...</title>
 	
-
+<div>
+     <h1>Parent Window</h1>
+     <iframe src="https://juregos.fun/" width="100" height="100"></iframe>
+     <script>
+         window.addEventListener("message",
+         function (e) {
+            if (e.origin !== 'https://juregos.fun/') { return; }
+               alert(e.data);
+            },false);
+     </script>
+</div>
 
 <div>
     <h1>iFrame Window</h1>
