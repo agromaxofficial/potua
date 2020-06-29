@@ -1,130 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Leer Más...</title>
-    <style>
-        *{
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .like {
-            width: 142px;
-            height: 161px;
-            object-fit: contain;
-            margin-bottom: 30px;
-        }
-        .flex{
-            text-align: center;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-			transform:scale(1.1);
-        }
-		
-  @media screen and (max-width: 900px) {
-   .flex{display: unset !important;}
-   body{ margin-top: 18%;}
-  }
-  .custom-url{transform: SCALE(1.5);}
-  
-  
-        .copy,.alt {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 16.4px;
-            font-weight: bold;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: normal;
-            letter-spacing: 0.21px;
-            text-align: center;
-            color: #828282;
-        }
-        .alt {
-            font-weight: normal;
-        }
+<!DOCTYPE html><html lang="en"><head>              
+    <meta http-equiv="content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Occhiali di diottrie </title>
+    <link href="css/swiper.min.css" rel="stylesheet">
+<link href="css/animate.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/base.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/form.css">
+<script src="js/jquery.min.js"></script>    
+<meta http-equiv="x-dns-prefetch-control" content="on">
 
-        #redirect{
-            margin-top: 30px;
-            display: inline-block;
-            background-color: #5cb85d;
-            text-decoration: none;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 16px;
-            font-weight: 500;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: 1.18;
-            letter-spacing: 1.25px;
-            text-align: center;
-            color: #ffffff;
-            padding: 15px 50px;
-            border-radius: 20px;
-            box-shadow: 0 5px 10px 2px rgba(0,0,0,0.3);
-            transition: all 0.1s ease-in-out;
-        }
-        #redirect:hover{
-            background-color: #3ea342;
-            box-shadow: 0 5px 5px 2px rgba(0,0,0,0.3);
-        }
-    </style>
 </head>
-<body style="overflow:hidden">
-    <div class="flex">
-        <div class="container">
-            <img src="like.svg" class="like" alt="Like icon">
-            <p class="copy">
-               benvenuto .dettagli sul sito
-            </p>
-            <a href="#" class="custom-url" id="redirect">Leer Más >></a>
+<body style="max-width: 640px;margin: auto;">
+
+<div id="page" style="padding-bottom: 20px; background: #fff;">
+    <div class="swiper-container swiper-container1">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/img1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="img/img2.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="img/img3.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="img/img4.jpg" alt=""></div>        
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="seckill-container">
+        <div class="seckill-price-wrap">
+            <div class="seckill-price" style="width: 100%; text-align: center;"><span class="seckill-big-price">
+                    <span class="price_only6918">49</span>
+                    <span class="price_currency">€</span>
+            </span><span class="seckill-small-price">
+                    <span class="price_old6918">98</span>
+                    <span class="price_currency">€</span>
+            </span></div>
+            <div class="seckill-btm-div">
+                <a href="#order-now"><button class="button-header">Ordina adesso</button></a>
+            </div>
+        </div>
+        <div class="seckill-time-wrap">
+            <span class="seckil-time-title">Finisce il:</span>
+            <div class="seckill-time-div" id="seckill_time">
+                <span class="seckill-time-num hour">20</span>
+                <span class="seckill-time-colon">:</span>
+                <span class="seckill-time-num minute">52</span>
+                <span class="seckill-time-colon">:</span>
+                <span class="seckill-time-num s">44</span>
+                <span class="seckill-time-colon">.</span>
+                <span class="seckill-time-num ms">44</span>
+            </div>
         </div>
     </div>
-</body>
-</html>
 
-<script type="text/javascript">
-var query = location.search.slice(1);
-var partes = query.split('&ff');
-var data = {};
-partes.forEach(function (parte) {
-    var chaveValor = parte.split('kk');
-    var chave = chaveValor[0];
-    var valor = chaveValor[1];
-    data[chave] = valor;
-});
+    <div class="title-container">
+        <div class="title"> Un paio di occhiali che possono utilizzare molte persone. Basta solamente regolarli con i gradi di cui hai bisogno! </div>
+        <div class="tips"> Non c'è bisogno di prenotare un optometria o una visita per questi occhiali! Questa volta l'oculista sarai tu! </div>
+    </div>
+    
 
-var encurtar = data['encurtar'];
-var url = data['url'];
-if(encurtar === 'sim'){
+    <iframe style="width: 100%; height: 300px;" src="https://www.youtube.com/embed/sRIKpo1bbAU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="description-container">
+        <div class="description-header">Dettagli prodotto</div>
+        <div class="description-body">
+
+            <div class="video-block col-lg-6 col-md-6 col-sm-6" style="display: inline-block; font-size: 19px; vertical-align: top;">
+                    </div>           
+                <p><img src="img/img8.jpg"></p>
+                <p><img src="img/img9.jpg"></p>
+                <p><img src="img/img6.jpg"></p>
+                <p><img src="img/img10.jpg"></p>
+                <p><img src="img/img11.jpg"></p>
+                <p><img src="img/img12.jpg"></p>               
+                <p><img src="img/img16.jpg"></p>
+                <p><img src="img/img15.jpg"></p>
+
+            </div>
+    </div>
+    <div class="label-container clearfix">
+        <h3 style="font-size: .6rem;
+    color: #666;
+    padding: .4rem;
+    border-bottom: .1rem solid #f5f5f5;
+    text-align: center;
+    background-color: #ddd;">Pagamento e consegna</h3>
+        
+        <div class="label"><div class="label-img"><img src="img/guarantee-1.png" style="width: 40px; "></div><span class="label-img-text"> Richiedi il tuo ordine sul sito</span></div>
+        <div class="label"><div class="label-img"><img src="img/guarantee-2.png" style="width: 40px; "></div><span class="label-img-text"> Il nostro operatore ti chiamerà per confermare l'ordine e sapere il tuo indirizzo</span></div>
+        <div class="label"><div class="label-img"><img src="img/guarantee-3.png" style="width: 40px; "></div><span class="label-img-text"> Il tuo ordine verrà consegnato velocemente al tuo indirizzo dal corriere</span></div>
+        <div class="label"><div class="label-img"><img src="img/guarantee-4.png" style="width: 40px; "></div><span class="label-img-text"> Ricevi l'ordine e paga in contanti alla consegna</span></div>
+    </div>
+
+    <div id="form-wrapper" class="new_form form form-wrapper" style="text-align: center;">
+ <!--    <div class="fhq" id="order-now"> <span class="sp free_del">Consegna Gratis! </span> <br>
+        <span class="sp black">  <span class="adfh-discount"></span>%!</span> <br>
+        <span class="sp black">Quantità limitata! </span> </div> -->
+    <div class="price" style="margin: 15px 0 30px;">
+        <span class="sp white old-price" style="text-decoration: line-through;
+}">Vecchio prezzo: 
+        <span class="price_old6918">98</span>
+        <span class="price_currency">€</span>
+      </span>
+      <span class="sp new-price" style="">Nuovo prezzo: 
+        <span class="price_only6918">49</span>
+        <span class="price_currency">€</span>
+      </span>
+    </div>
+
+   <form action="" method="post" class="order_form" id="order-now">
+		<label for="">Per esempio: Rossaro Enzo</label>
+	    <input class="input" type="text" name="name" placeholder="Inserisci il tuo nome" required>
+	    <label for="">Per esempio: +39 0123456789</label>
+	    <input class="input user-phone" type="phone" name="phone" placeholder="Inserisci il tuo telefono" required id="phone">
+	    <button class="button" type="submit">Ordina adesso! </button>
+    </form>
+</div>
+
+        <div style="text-align: center;color:#000; font-size: 14px; padding-top: 40px;">
+           <p>ST. GERARDE LTD, PO Box 832, Orion Mall, Palm Street, Victoria, Mahé, Seychelles</p>
+           <p><a href="policy_it.html" target="_blank">Polizza privacy</a></p>
+          </div>
+    </div>
 
 
+<script src="js/jquery.lazyload.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/product.js"></script>
 
 
-fetch()
-  .then(response => {
-    return response.json()
-  })
-  .then(resultado => {
-    // Work with JSON data here
-	var link = resultado['short'];
-        $(document).ready(function () {
-        $('.custom-url').attr('href', link);
-});
-  })
-  .catch(err => {
-    // Do something for an error here
-  })
+ <!-- callback -->
+            <div class="callback-btn">
+                    <img src="img/i-phone.png" alt="">
+                </div>
+                <div class="callback-form hide">
+                    <form class="form lead_form" action="" style="padding: 10px 0;" method="post">
+                        <label for="form_name1" style="padding: 0 0 0 10px; color: #fff">Per esempio: Rossaro Enzo</label>
+                        <input id="form_name1" class="name" type="text" name="name" placeholder="Inserisci il tuo nome" required style="margin-bottom: 10px;">
+                        <label for="form_phone1" style="padding: 0 0 0 10px; color: #fff">Per esempio: +39 0123456789</label>
+                        <input id="form_phone1" class="phone" type="text" name="phone" placeholder="Inserisci il tuo telefono" required>
+                        <button class="orange-btn primary_btn" type="submit">
+                           Ordina adesso!
+                        </button>
+                    </form>
+                    <img src="img/i-cross.svg" alt="Close">
+                </div>
 
-}else{
+ <!-- callback -->
 
-     $(document).ready(function () {
-        $('.custom-url').attr('href', decodeURIComponent(url));
-});
+ <style>
 
-}
+ </style>
+ <script>
+ 	 $(".callback-btn").click(function() {
+    $(".callback-form").toggleClass("hide");
+  });
 
-</script>
+  $(".show-callback").click(function() {
+    $(".callback-form").removeClass("hide");
+  });
+
+  $(document).click(function(e) {
+    if (
+      $(e.target).closest($(".callback-form, .callback-btn, .show-callback"))
+        .length > 0
+    ) {
+      return;
+    }
+    $(".callback-form").addClass("hide");
+  });
+
+  $('img[src="img/i-cross.svg"]').click(function() {
+    $(".callback-form").addClass("hide");
+  });
+ </script>
+</body></html>
