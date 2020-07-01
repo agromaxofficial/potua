@@ -1,0 +1,1 @@
+$(document).on("ready",function(){function o(){$(".owl-carousel").owlCarousel({items:1,loop:1,nav:!0}),$(".owl-prev").empty(),$(".owl-next").empty()}function e(){$(".owl-carousel").trigger("destroy.owl.carousel")}$(window).width()<=767?o():e(),$(window).resize(function(){$(window).width()<=767?o():e()})});
