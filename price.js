@@ -100,7 +100,7 @@ $(function() {
                 $('.new_price_cur').html('грн*');
                 $('.new_price_sig').html('грн');
                 $('select').val('UA').trigger('change');
-                initializeMask({ mask: "(+38)9999999999", removeMaskOnSubmit: true })
+                initializeMask('remove')
             }
 
             if (sel == 'MD') {
