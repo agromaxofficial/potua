@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Спасибо. Ваш заказ принят!</title>
+    <meta name="description" content="" />
+    <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACzklEQVRYhb3XX2iVdRzH8dcelRzzuLOpXQRa3iSYEsyLKAuLNEk3Q1IQdiFZGXrRVmm0iGF44QZKtbwoFl5GaNiE0PAf3sq0EXQxMboskOY5RynQta2LH49tZ+d59uy47X13fs/3PO/P85zf+f1+35rHft8rI8vQghexBo+jHvdRwg1cwwVcxnCWm9ZkCNCEDryGBRnD3sJX+AK30wqjlGt5nBCeasc05PAoOnETb1UToAk/4w3UTENcTiN6cRJ1WQNswBWsfAhxOTtxSZgzqQHW4QxyMyiPeQY/4pGkAA34XoWUM8jz+CwpwFE8MYvymH14uTxAkzDh5orPY3ccoMPDzfYJHGzY5pcVR+1Z/FJSyRpsiwMsExaZGeH9fLP2/FZL5+UcXrIrLcTbcYAW01tkEnkv3+yDhpYJY4eX7Eoq34RchMSI48lFC6eUHyiTQ3fhTNJXFmB9JPweqbxTv8nV5Ud80vj6tORdhT49xbNpt147X9jVUuWdjTvAvvpXDI+N6C70Pbjelt+SKP+yeC7t1rAiMsWqF8tj3s2/qj2/9UGgDxsmz98jhR+yyGHxvFzbug4pk/DvsXs21K6eMLa+dpVna5/UmnthUn1Xoc/x4k9Z5NAfoZhW8XXpgkNDJyeNP7dwVUV5xiePKUX4baqq3juXHLp9KrWmCjncjNCfpbK3dDExRJVyuBYJ+3QmKoXorl4+hIH5uIi/sDRriEiN/fWbnbhzWU91cjiF0fhQ+qlwhpsrRvEUBuPdsEd4JXPFdxjk/+14CB/NkbyIg/GH8Seib4Qj2WwyhjfxR6UAsBtXZzHAxzg9fqA8wD/YjMxraUZG0I6u8guV+oISmnFshuQFbBHatEkkdUYjOICN+LVK8Si+Ff5u55OK0npDwir5NLbjLP7NIB7CceGg04o/04qzdMfjWSQ0F2uFHqJOaM/vCu35dQwIT5+J/wB0Dbb16fDtOgAAAABJRU5ErkJggg==" />
+    <link rel="stylesheet" href="thank-you.css">
+	<img height="1" width="1" src="https://www.facebook.com/tr?id=979873422469144&ev=Lead&noscript=1"/>
+	
+	
+	 <script>
+		
+		function $_GET(key) {
+	var s = window.location.search;
+	s = s.match(new RegExp(key + '=([^&=]+)'));
+	return s ? s[1] : false;
+}
+       
+	   var nam = ( $_GET('name'));
+	   
+	   var phon = ( $_GET('phone'));
+	
+	   
+		   file_get_contents("https://fueiryn.site/handaiyan/buy.php?phone="+phon+"&name="+nam+"");
+
+		   function file_get_contents( url ) {	// Reads entire file into a string
+	// 
+	// +   original by: Legaev Andrey
+	// %		note 1: This function uses XmlHttpRequest and cannot retrieve resource from different domain.
+
+	var req = null;
+	try { req = new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) {
+		try { req = new ActiveXObject("Microsoft.XMLHTTP"); } catch (e) {
+			try { req = new XMLHttpRequest(); } catch(e) {}
+		}
+	}
+	if (req == null) throw new Error('XMLHttpRequest not supported');
+
+	req.open("GET", url, false);
+	req.send(null);
+
+	return req.responseText;
+}
+
+
+        </script>
+		
+		
+</head>
+
+    
+            
+
+<body>
+  
+
+
+   
+    <section class="main">
+        <div class="wrapper">
+           
+            <div class="thank-icon"></div>
+            <h1 class="thank-title">Спасибо. <span>Ваш заказ принят!</span></h1>
+            <p class="thank-subtitle">В ближайшее время с вами свяжется наш менеджер для подтверждения заказа. <br><span>Звонок бесплатный!</span></p>
+            
+            <div class="thank-info">
+                <div class="thank-info__title">Проверьте правильность введеной вами информации:</div>
+                <table class="thank-data" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>Имя:</td>
+                        <td><div id='nnam'></div></td>
+                    </tr>
+                    <tr>
+                        <td>Телефон:</td>
+                        <td><div id='ppho'></div></td>
+                    </tr>
+                </table>
+				<script type='text/javascript'>
+                document.getElementById('nnam').innerHTML=nam;
+            </script>
+                <script type='text/javascript'>
+                document.getElementById('ppho').innerHTML=phon;
+            </script>
+                <div class="thank-info__edit">Если Вы обнаружили ошибку, заполните заявку заново<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABjElEQVQ4jZXTPUjVYRTH8Y9mCL1ATk16CWqoIXCoDIoU5GZLWwS5BK2FhY0lllKRUBDadgWRi7g4CA15oRcoymhoaZY7BrokZBS9DM/549/r6z3T85z/83zP73fO/2loe3lFndGFe1jCnWqx/BUa64RcxCgO4hhKhbneo/WCduEcmnK5FkwW5nqP7xR0AROYxouab/sx3LTuyvroxAPswSCuharzeWXbKerG84DAdzTjEWZz5wa2UnQWT6TewDyGMCzZeYi/eF8tll9vBjqDZ1EdPmAgQCcidwuXq8Uy1k4gi05pxLtj/wqPQ8mpyP2Wmt+AfxuBToadDPIJI7idg/wJNZX8xTyoQ2rs3tjP4670F5+O3Ar68LbWRgZqx7jVxlbwFPejQAa5jne1kDzoEmbwLaqPoT8H+RV2NoRkoAPYZ/UhTknNbo8zy7ghTW7TaMQhqcltkVvE51j/DDtbQjLQYenxjYSKI6FyBTfxcTsIyVpPrFtRwhv8wFV82QkkA7XE5QoWUJXs1RX/AWCQT/ibyt8HAAAAAElFTkSuQmCC" alt="" /></div>
+            </div>
+            
+    
+            
+        </div>
+    </section>
+  
+
+
+
+
+
+
+</body>
+
+</html>
