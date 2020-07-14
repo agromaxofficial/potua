@@ -1,18 +1,4 @@
-<?php  
-                    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-                      $ipp = $_SERVER['HTTP_CLIENT_IP'];
-                    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-                        $ipp = $_SERVER['HTTP_X_FORWARDED_FOR'];
-                    } else {
-                        $ipp = $_SERVER['REMOTE_ADDR'];
-                    }
-                   $q = @unserialize(file_get_contents('http://ip-api.com/php/'.$ipp . '?lang=ru'));
-                
-                   $code = 'RU';
-                   if ($q && $q['status'] == 'success') {
-                    $code = $q['countryCode'];
-                   }
-                ?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
    <head> <style>body{display:none}</style>
                         <style>.FOOTER_INFO{display:block;-webkit-user-select:none!important;user-select:none!important;}.FOOTER_INFO:empty{display:none!important}</style>
