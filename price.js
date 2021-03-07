@@ -42,6 +42,11 @@ $(function () {
     } else {
         kg_selected = '';
     }
+    if (country == 'UZ') {
+        uz_selected = 'selected="selected"';
+    } else {
+        uz_selected = '';
+    }
 
 
     selects = $("select[name='country']");
@@ -55,6 +60,7 @@ $(function () {
     //     selects.append('<option value="AM" ' + am_selected + '>Армения</option>');
     // selects.append('<option value="AZ" ' + az_selected + '>Азербайджан</option>');
     // selects.append('<option value="KG" ' + kg_selected + '>Кыргызстан</option>');
+    selects.append('<option value="UZ" ' + uz_selected + '>Узбекистан</option>');
 
     var change = 0,
         updatePrices = function (item) {
@@ -168,6 +174,17 @@ $(function () {
                 initializeMask('remove')
             }
 
+            if (sel == 'UZ') {
+                $('.old_price_val').html('99000');
+                $('.old_price_cur').html('сум');
+                $('.old_price_sig').html('сум');
+                $('.new_price_val').html('20000');
+                $('.new_price_cur').html('сум*');
+                $('.new_price_sig').html('сум');
+                $('select').val(sel).trigger('change');
+                initializeMask({ mask: "(+\\9\\98)999999999", removeMaskOnSubmit: false })
+            }
+
             change = 0;
         };
     $("select").change(function () {
@@ -178,4 +195,17 @@ $(function () {
     function initializeMask(mask) {
         $('[name=phone]').inputmask(mask);
     }
+    $(document).ready(function () {
+        $("[name=phone]").keydown(function (event) {
+            if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 ||
+                (event.keyCode == 65 && event.ctrlKey === true) ||
+                (event.keyCode >= 35 && event.keyCode <= 39)) {
+                return;
+            } else {
+                if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
+                    event.preventDefault();
+                }
+            }
+        });
+    });
 });
