@@ -1,783 +1,88 @@
-<!doctype html>
-<html lang="ru">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AgroMax</title>
-	<script src="data:text/javascript;base64,KGZ1bmN0aW9uKCkgew0KdmFyIG5hbWUgPSAnX1NUMlpiY2Jrd2ZKanBSZjgnOw0KaWYgKCF3aW5kb3cuX1NUMlpiY2Jrd2ZKanBSZjgpIHsNCndpbmRvdy5fU1QyWmJjYmt3ZkpqcFJmOCA9IHsNCnVuaXF1ZTogZmFsc2UsDQp0dGw6IDg2NDAwLA0KUl9QQVRIOiAnaHR0cHM6Ly9lZGFybGluZy5vbmxpbmUvUTgxazFQJywNClBfUEFUSDogJ2h0dHBzOi8vZWRhcmxpbmcub25saW5lLzIwMTQ2ODkvcG9zdGJhY2snLA0KfTsNCn0NCmNvbnN0IF9oelFrTjdCcVRRUVRaM0NzID0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ2NvbmZpZycpOw0KaWYgKHR5cGVvZiBfaHpRa043QnFUUVFUWjNDcyAhPT0gJ3VuZGVmaW5lZCcgJiYgX2h6UWtON0JxVFFRVFozQ3MgIT09IG51bGwpIHsNCnZhciBfdkhIYkxnUGZWcXFzNzRSZiA9IEpTT04ucGFyc2UoX2h6UWtON0JxVFFRVFozQ3MpOw0KdmFyIF9xZkNrajlrdGhXbnYxQ21rID0gTWF0aC5yb3VuZCgrbmV3IERhdGUoKS8xMDAwKTsNCmlmIChfdkhIYkxnUGZWcXFzNzRSZi5jcmVhdGVkX2F0ICsgd2luZG93Ll9TVDJaYmNia3dmSmpwUmY4LnR0bCA8IF9xZkNrajlrdGhXbnYxQ21rKSB7DQpsb2NhbFN0b3JhZ2UucmVtb3ZlSXRlbSgnc3ViSWQnKTsNCmxvY2FsU3RvcmFnZS5yZW1vdmVJdGVtKCd0b2tlbicpOw0KbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oJ2NvbmZpZycpOw0KfQ0KfQ0KdmFyIF9QNXlnd3BHYmRCamM3SEJMID0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ3N1YklkJyk7DQp2YXIgX1d4THY4bXpraEozQzVCOEIgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgndG9rZW4nKTsNCnZhciBfTXBXSlltTW5HUWo2MWNRSCA9ICc/cmV0dXJuPWpzLmNsaWVudCc7DQpfTXBXSlltTW5HUWo2MWNRSCArPSAnJicgKyBkZWNvZGVVUklDb21wb25lbnQod2luZG93LmxvY2F0aW9uLnNlYXJjaC5yZXBsYWNlKCc/JywgJycpKTsNCl9NcFdKWW1NbkdRajYxY1FIICs9ICcmc2VfcmVmZXJyZXI9JyArIGVuY29kZVVSSUNvbXBvbmVudChkb2N1bWVudC5yZWZlcnJlcik7CQkNCnZhciBub2RlQUcgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnZGRkJyk7DQp2YXIgbWF4QUcgPSAwOw0KZnVuY3Rpb24gb25Nb3Rpb25DaGFuZ2UoZSkgew0KdmFyIGFnID0gZS5hY2NlbGVyYXRpb25JbmNsdWRpbmdHcmF2aXR5Ow0KZm9yKHZhciBpIGluIGFnKXsNCmlmKE1hdGguYWJzKG1heEFHKSA8IE1hdGguYWJzKGFnW2ldKSl7DQptYXhBRyA9IGFnW2ldOw0KfQ0KfQ0KX01wV0pZbU1uR1FqNjFjUUggKz0gJyZkZWZhdWx0X2tleXdvcmQ9JyArbWF4QUcudG9GaXhlZCgyKTsJDQpfTXBXSlltTW5HUWo2MWNRSCArPSAnJmxhbmRpbmdfdXJsPScgKyBlbmNvZGVVUklDb21wb25lbnQoZG9jdW1lbnQubG9jYXRpb24uaG9zdG5hbWUgKyBkb2N1bWVudC5sb2NhdGlvbi5wYXRobmFtZSk7DQpfTXBXSlltTW5HUWo2MWNRSCArPSAnJm5hbWU9JyArIGVuY29kZVVSSUNvbXBvbmVudChuYW1lKTsNCl9NcFdKWW1NbkdRajYxY1FIICs9ICcmaG9zdD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KHdpbmRvdy5fU1QyWmJjYmt3ZkpqcFJmOC5SX1BBVEgpOw0KaWYgKHR5cGVvZiBfUDV5Z3dwR2JkQmpjN0hCTCAhPT0gJ3VuZGVmaW5lZCcgJiYgX1A1eWd3cEdiZEJqYzdIQkwgJiYgd2luZG93Ll9TVDJaYmNia3dmSmpwUmY4LnVuaXF1ZSkgew0KX01wV0pZbU1uR1FqNjFjUUggKz0gJyZzdWJfaWQ9JyArIGVuY29kZVVSSUNvbXBvbmVudChfUDV5Z3dwR2JkQmpjN0hCTCk7DQp9DQppZiAodHlwZW9mIF9XeEx2OG16a2hKM0M1QjhCICE9PSAndW5kZWZpbmVkJyAmJiBfV3hMdjhtemtoSjNDNUI4QiAmJiB3aW5kb3cuX1NUMlpiY2Jrd2ZKanBSZjgudW5pcXVlKSB7DQpfTXBXSlltTW5HUWo2MWNRSCArPSAnJnRva2VuPScgKyBlbmNvZGVVUklDb21wb25lbnQoX1d4THY4bXpraEozQzVCOEIpOw0KfQ0KdmFyIGEgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTsNCmEudHlwZSA9ICdhcHBsaWNhdGlvbi9qYXZhc2NyaXB0JzsNCmEuc3JjID0gd2luZG93Ll9TVDJaYmNia3dmSmpwUmY4LlJfUEFUSCArIF9NcFdKWW1NbkdRajYxY1FIOw0KdmFyIHMgPSBkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc2NyaXB0JylbMF07DQpzLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKGEsIHMpDQp3aW5kb3cucmVtb3ZlRXZlbnRMaXN0ZW5lcignZGV2aWNlbW90aW9uJywgb25Nb3Rpb25DaGFuZ2UsIHRydWUpOw0KfQ0Kd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoJ2RldmljZW1vdGlvbicsIG9uTW90aW9uQ2hhbmdlLCB0cnVlKTsNCn0pKCk7"></script>
-    <link href="https://fonts.ksn.pw/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-    <link href="https://fonts.ksn.pw/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link rel="stylesheet" href="build/css/slick.css">
-    <link rel="stylesheet" href="build/css/slick-theme.css">
-    <link rel="stylesheet" href="build/css/timeTo.css">
-    <link rel="stylesheet" href="build/css/font.css">
-    <link rel="stylesheet" href="build/css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.carousel.min.css" rel="stylesheet" />
+<title>Qué es el KÉFIR (y cómo hacerlo en casa) | PequeRecetas | Blog</title>
+<meta http-equiv="Content-Type" content="text/html; charset="utf-8" />
+<style type="text/css" media="all">
+@import "images/style.css";
+</style>
+
 
 </head>
-
-<body>
-    <script src="counter.js"></script>
-    <header>
-        <div class="header__body">
-            <ul>
-                <li>
-                    Обильное цветение и плодоношение
-                </li>
-                <li>
-                    На 2-3 недели ускоряет созревание
-                </li>
-                <li>
-                    Восхитительный вкус выращенных плодов
-                </li>
-                <li>
-                    Высокий стандарт качества продукции
-                </li>
-            </ul>
-        </div>
-    </header>
-    <div class="main">
-        <div class="info">
-            <div class="info__body">
-                <div class="info__title">
-                    <h2>AgroMax<sup>®</sup>
-                    </h2>
-                    <h3>Органическое удобрение
-                        <span>для усиления роста садовых культур</span>
-                    </h3>
-                    <p>На 50% больше урожая каждый месяц</p>
-                </div>
-                <div class="info__list">
-                    <div class="info__list-pack">
-                        <div class="info__list-pack__new mob">
-                            <p>Специальная цена
-                                <span>
-									<span class="new_price_val">149</span><span class="new_price_cur">руб</span>
-                                </span>
-                            </p>
-                        </div>
-                        <img src="build/images/info-pack.png" alt="" />
-                    </div>
-                    <div class="info__list-body">
-                        <ul>
-                            <li>
-                                1 упаковка = 50 килограммам конского навоза для удобрения
-                            </li>
-                            <li>
-                                100% органическое удобрение, насыщенное питательными веществами
-                            </li>
-                            <li>
-                                Всход любых семян в 2 раза быстрее
-                            </li>
-                            <li>
-                                Стимулирует рост саженцев и черенков
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="info__action">
-                    <div class="info__action-note">
-                        <p>*при заказе набора</p>
-                    </div>
-                    <div class="info__action-top">
-                        <div class="info__action-title">
-                            <p>Успейте оформить заказ
-                                <span>ПО АКЦИИ!</span>
-                            </p>
-                        </div>
-                        <div class="info__action-price dec">
-                            <div class="info__action-price__new">
-                                <p>Специальная цена
-                                    <span>
-										<span class="new_price_val">149</span><span class="new_price_cur">руб</span>
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="info__action-timer">
-                            <p>ДО КОНЦА
-                                <span>АКЦИИ</span> ОСТАЛОСЬ</p>
-                            <div id="countdown-1"></div>
-                        </div>
-                        <div class="info__action-price mob">
-                            <div class="info__action-price__new">
-                                <p>Специальная цена
-                                    <span>
-										<span class="new_price_val">149</span>
-                                    <span class="new_price_cur">руб</span>
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="info__action-form">
-                        <form class="landing__form">
-                            <select name="country"></select>
-                            <input type="text" name="name" placeholder="Ваше имя">
-                            <input type="tel" name="phone" placeholder="Номер телефона">
-                            <button type="submit">Заказать AgroMax</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="problem">
-            <div class="problem__body">
-                <div class="problem__title">
-                    <h2>Садоводы со всей России ежегодно сталкиваются с проблемами!</h2>
-                </div>
-                <div class="problem__text">
-                    <p>Более 70% семян не всходит, 60% рассады погибает в первые 3 недели после высадки</p>
-                    <p>Почему покупая самые дорогие, отборные семена, приходится сталкиваться с
-                        <span>низким количеством всходов?</span> Рассада не набирает жизненных сил, а выжившие растения не плодоносят или дают с каждым годом всё меньше урожая? Как правило, низкая урожайность имеет ряд причин:</p>
-                </div>
-                <div class="problem__list">
-                    <ul>
-                        <li>
-                            Слабые всходы семян
-                        </li>
-                        <li>
-                            Листва растений не набирает сочности и объема
-                        </li>
-                        <li>
-                            Низкая урожайность
-                        </li>
-                        <li>
-                            Рассада развивается медленно
-                        </li>
-                        <li>
-                            Обычные удобрения не работают, либо приводят растения к гибели
-                        </li>
-                        <li>
-                            Мелкие безвкусные плоды
-                        </li>
-                        <li>
-                            Слабая корневая система не доставляет растению питательные вещества
-                        </li>
-                        <li>
-                            Почва теряет питательные свойства
-                        </li>
-                        <li>
-                            Экзотические растения не приживаются в новой почве
-                        </li>
-                        <li>
-                            Растения гибнут от паразитов и вредителей
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="universe">
-            <div class="universe__body">
-                <div class="universe__title">
-                    <h2>AgroMax® - универсальное удобрение для всех видов растений</h2>
-                    <p>Активатор роста помогает растениям достигнуть максимальных размеров в короткие сроки. Усиленное питание корневой системы позволяет получить сочные, крупные плоды, обладающие удивительно приятными, сильными вкусовыми качествами.</p>
-                </div>
-                <div class="universe__list">
-                    <ul>
-                        <li>
-                            <img src="build/images/universe-img1.png" alt="" />
-                            <p>Усиление всхода семян</p>
-                        </li>
-                        <li>
-                            <img src="build/images/universe-img2.png" alt="" />
-                            <p>Насыщение корней растений азотом, фосфором, кальцием, магнием.</p>
-                        </li>
-                        <li>
-                            <img src="build/images/universe-img3.png" alt="" />
-                            <p>Активизация процессов метаболизма молодых растений </p>
-                        </li>
-                        <li>
-                            <img src="build/images/universe-img4.png" alt="" />
-                            <p>Повышение урожайности на 50%. В два раза больше спелых плодов в один период плодоношения.</p>
-                        </li>
-                        <li>
-                            <img src="build/images/universe-img5.png" alt="" />
-                            <p>Натуральные сочные овощи, выращенные на натуральном удобрении свосхитительным, ярким вкусом.</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="universe__btn">
-                    <button data-toggle="scroll" data-id="#form">Заказать AgroMax</button>
-                </div>
-            </div>
-        </div>
-        <div class="consist">
-            <div class="consist__body">
-                <div class="consist__title">
-                    <h2>От проращивания семян до получения урожая - меньше 5ти месяцев</h2>
-                    <p>Секрет активатора роста растений заложен в уникальной формуле. AgroMax - высококонцентрированный препарат, имеющий в составе более 40 ключевых микроэлементов. </p>
-                </div>
-                <div class="consist__pack">
-                    <img src="build/images/consist-pack.png" alt="" />
-                    <p>удобная форма для удобрения земли</p>
-                </div>
-                <div class="consist__list">
-                    <ul>
-                        <li>
-                            <h4>Биогумус</h4>
-                            <img src="build/images/consist-img1.png" alt="" />
-                            <p>Концентрированный конский навоз насыщает землю большим количеством углекислого газа, усиливает скорость поступления питательных веществ в листья и плоды растения.</p>
-                        </li>
-                        <li>
-                            <h4>АЗОТОБАКТЕРИИ</h4>
-                            <img src="build/images/consist-img2.png" alt="" />
-                            <p>Восстанавливают и структурируют плодородную почву. Способствуют активному размножению полезных бактерий и улучшению их симбиоза с растениями.</p>
-                        </li>
-                        <li>
-                            <h4>Фосфор</h4>
-                            <img src="build/images/consist-img3.png" alt="" />
-                            <p>Главный источник энергии для роста растений. Ускоряет всход, укоренение, цветение и плодоношение всех растений.</p>
-                        </li>
-                        <li>
-                            <h4>Кальций</h4>
-                            <img src="build/images/consist-img4.png" alt="" />
-                            <p>Часть обязательного питания для растений, формирует здоровый иммунитет растения</p>
-                        </li>
-                        <li>
-                            <h4>Магний</h4>
-                            <img src="build/images/consist-img5.png" alt="" />
-                            <p>Помогает усваивать максимум питательных веществ из почвы, воды, солнечного света.</p>
-                        </li>
-                        <li>
-                            <h4>Азот</h4>
-                            <img src="build/images/consist-img6.png" alt="" />
-                            <p>Делает стенки растения твердыми, листву сочной, цветы и плоды крупными и насыщенными вкусом.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="expert">
-            <div class="carousel">
-                <div class="owl-carousel slide-one">
-                    <div class="item-1" data-hash="slide1">
-                        <div class="expert__body">
-                            <div class="expert__title">
-                                <div class="expert__title-name">
-                                    <h2>AgroMax</h2>
-                                </div>
-                                <div class="expert__title-text">
-                                    <h2>Мнение эксперта:
-                                        <span>Огород будет приносить вам радость круглый год!</span>
-                                    </h2>
-                                </div>
-                            </div>
-                            <div class="video">
-                                <center>
-
-<iframe
-src="https://www.youtube.com/embed/aqblfhKxljc"
-srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/aqblfhKxljc?autoplay=1><img src=https://img.youtube.com/vi/aqblfhKxljc/hqdefault.jpg><span>▶</span></a>"
-frameborder="0"
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>									
-                                </center>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-2" data-hash="slide2">
-                        <div class="expert__body">
-                            <div class="expert__title">
-                                <div class="expert__title-name">
-                                    <h2>AgroMax</h2>
-                                </div>
-                                <div class="expert__title-text">
-                                    <h2>Мнение эксперта:
-                                        <span>Огород будет приносить вам радость круглый год!</span>
-                                    </h2>
-                                </div>
-                            </div>
-                            <div class="expert__info">
-                                <div class="expert__img mob">
-                                    <img src="build/images/expert-img.jpg" alt="" />
-                                </div>
-                                <div class="expert__text">
-                                    <p>За 6 лет тестирования активатора роста AgroMax мы получили более 40 000 отзывов от профессиональных садоводов и дачников-любителей со всей России. Концентрат представляет из себя по-настоящему инновационный продукт,
-                                        сочетающий в себе все известные разработки в области агрономии и сельского хозяйства. Спектр действия концентрата огромен, он ускоряет всход семян, рост зеленой части растения, цветение и плодоношение. Мы добились
-                                        того, что средняя продолжительность плодоношения растения в тепличных условиях - 4-5 месяцев! Почти полгода непрерывного сбора крупных, сочных, вкусных плодов без нитратов и концерагенов. Это настоящий прорыв в
-                                        </p>
-                                    <p>Александра Григорьева, Аграном, Член Союза Агрономов РФ.</p>
-                                    <img src="build/images/expert-sign.png" alt="" />
-                                </div>
-                                <div class="expert__img dec">
-                                    <img src="build/images/expert-img.jpg" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div id="demos-link1" style="margin-top: 20px">
-                    <div class="slide_button">
-                        <a class="slide_button1" href="#slide1">Смотреть видео отзыв</a>
-                    </div>
-                    <div class="slide_button">
-                        <a class="slide_button2" href="#slide2">Читать отзыв</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="expert expert-mob">
-            <div class="expert__body">
-                <div class="expert__title">
-                    <div class="expert__title-name">
-                        <h2>AgroMax</h2>
-                    </div>
-                    <div class="expert__title-text">
-                        <h2>Мнение эксперта:
-                            <span>Огород будет приносить вам радость круглый год!</span>
-                        </h2>
-                    </div>
-                    <div class="expert__info">
-                        <div class="expert__img mob">
-                            <img src="build/images/expert-img.jpg" alt="" />
-                        </div>
-                        <div class="expert__text">
-                            <p>За 6 лет тестирования активатора роста AgroMax мы получили более 40 000 отзывов от профессиональных садоводов и дачников-любителей со всей России. Концентрат представляет из себя по-настоящему инновационный продукт, сочетающий
-                                в себе все известные разработки в области агрономии и сельского хозяйства. Спектр действия концентрата огромен, он ускоряет всход семян, рост зеленой части растения, цветение и плодоношение. Мы добились того, что средняя
-                                продолжительность плодоношения растения в тепличных условиях - 4-5 месяцев! Почти полгода непрерывного сбора крупных, сочных, вкусных плодов без нитратов и концерагенов. Это настоящий прорыв в </p>
-                            <p>Александра Григорьева, Аграном, Член Союза Агрономов РФ.</p>
-                            <img src="build/images/expert-sign.png" alt="" />
-                        </div>
-                        <div class="expert__img dec">
-                            <img src="build/images/expert-img.jpg" alt="" />
-                        </div>
-                    </div>
-                </div>
-                <div class="video">
-                    <center>
-<iframe
-src="https://www.youtube.com/embed/aqblfhKxljc"
-srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/aqblfhKxljc?autoplay=1><img src=https://img.youtube.com/vi/aqblfhKxljc/hqdefault.jpg><span>▶</span></a>"
-frameborder="0"
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>						
-                    </center>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="max">
-            <div class="max__body">
-                <div class="max__title">
-                    <h2>Максимальное увеличение урожайности с AgroMax
-                        <sup>®</sup>
-                    </h2>
-                    <p>Испытания активатора роста AgroMax и сравнение препарата с конкурентами дал ученым более полную картину действия. В результате исследований выяснилось:</p>
-                </div>
-                <div class="max__list">
-                    <ul>
-                        <li>
-                            <img src="build/images/max-img1.png" alt="" />
-                            <p>усиливает рост овощных, садовых и злаковых культур</p>
-                        </li>
-                        <li>
-                            <img src="build/images/max-img2.png" alt="" />
-                            <p>всход любых семян, в том числе экзотических плодоносящих растений.</p>
-                        </li>
-                        <li>
-                            <img src="build/images/max-img3.png" alt="" />
-                            <p>концентрирование всех известных удобрений на рынке.</p>
-                        </li>
-                        <li>
-                            <img src="build/images/max-img4.png" alt="" />
-                            <p>больше питательных веществ поступают по стволу растения в листья и плоды.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="attention">
-            <div class="attention__body">
-                <div class="attention__info">
-                    <div class="attention__info-img">
-                        <img src="build/images/attention-apple.png" alt="" />
-                    </div>
-                    <div class="attention__info-text">
-                        <h2>
-                            <span>Внимание!</span> Недобросовестные производители добавляют химию в удобрения!</h2>
-                        <p>Вы замечали, что под видом "натуральных", многие производители продают удобрения с вредными, химическим образом синтезированными веществами?
-                        </p>
-                    </div>
-                </div>
-                <div class="attention__list">
-                    <ul>
-                        <li>
-                            <img src="build/images/attention-img1.jpg" alt="" />
-                            <h4>Ядохимикаты</h4>
-                            <p>Отлично убивают вредителей и сорняки, но неизбежно проникают в зелень и плоды. Попадая в пищу, приводят к пищевым отравлениям и инфекциям.</p>
-                        </li>
-                        <li>
-                            <img src="build/images/attention-img2.jpg" alt="" />
-                            <h4>Инсектициды</h4>
-                            <p>Уничтожают большинство нассекомых, но запрещены в удобрениях на всей территории РФ. Приводят к болезни и смерти скота, домашних животных.</p>
-                        </li>
-                        <li>
-                            <img src="build/images/attention-img3.jpg" alt="" />
-                            <h4>Пестициды</h4>
-                            <p>Избавляют от сорняков злаковые и овощные культуры. При вдыхании человеком ведет к болезням дыхательных путей, легких и сердца.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="attention__note">
-                <div class="attention__note-body">
-                    <div class="attention__note-text">
-                        <p>Напоминаем, что жидкий концентрат "AgroMax" является полностью органическим препаратом и не содержит компонентов химической промышленности.
-                        </p>
-                    </div>
-                    <div class="attention__note-btn">
-                        <button data-toggle="scroll" data-id="#form">Заказать AgroMax</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="use">
-            <div class="use__body">
-                <div class="use__top">
-                    <div class="use__pack">
-                        <img src="build/images/use-pack.png" alt="" />
-                    </div>
-                    <div class="use__title">
-                        <h2>Как использовать AgroMax
-                            <sup>®</sup> в саду, на участке и в теплице? </h2>
-                        <p>Концентрат AgroMax
-                            <sup>®</sup> идеально подходит для удобрения растений в любых условиях и в любое время года. Для достижения великолепного результата необходимо следовать правилам:</p>
-                    </div>
-                </div>
-                <div class="use__steps">
-                    <ul>
-                        <li>
-                            <div class="use__steps-num">
-                                <p>1</p>
-                            </div>
-                            <div class="use__steps-img">
-                                <img src="build/images/use-img1.jpg" alt="" />
-                            </div>
-                            <div class="use__steps-text">
-                                <p>Содержимое саше смешайте с водой из расчета 1 саше на 10-20 л воды. Дайте раствору настояться на 5-10 минут.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="use__steps-num">
-                                <p>2</p>
-                            </div>
-                            <div class="use__steps-img">
-                                <img src="build/images/use-img2.jpg" alt="" />
-                            </div>
-                            <div class="use__steps-text">
-                                <p>Для полива можно использовать пластиковые или железные лейки и ведра. Полив осуществляется обильно вокруг растений.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="use__steps-num">
-                                <p>3</p>
-                            </div>
-                            <div class="use__steps-img">
-                                <img src="build/images/use-img3.jpg" alt="" />
-                            </div>
-                            <div class="use__steps-text">
-                                <p>С помощью опрыскивателя распылите раствор на листву и цветки для опыления, усиления цветения и плодоношения.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="use__list">
-                    <ul>
-                        <li>
-                            Полностью безопасен в использовании
-                        </li>
-                        <li>
-                            Безвреден для детей и домашних животных
-                        </li>
-                        <li>
-                            Замедляет рост сорняков
-                        </li>
-                        <li>
-                            Отпугивает вредителей
-                        </li>
-                    </ul>
-                </div>
-                <div class="use__feed">
-                    <div class="use__feed-title">
-                        <h4>Мнения садоводов об активаторе роста AgroMax
-                            <sup>®</sup>
-                        </h4>
-                    </div>
-                    <div class="owl-carousel slide-one use__feed-slider">
-                        <div class="item-1">
-                            <div class="review_item">
-                                <center>
-<iframe
-src="https://www.youtube.com/embed/HBQM4cj6ZkU"
-srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/HBQM4cj6ZkU?autoplay=1><img src=https://img.youtube.com/vi/HBQM4cj6ZkU/hqdefault.jpg><span>▶</span></a>"
-frameborder="0"
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>									
-                                </center>
-
-                            </div>
-                        </div>
-                        <div class="item-2">
-                            <div class="review_item">
-                                <center>
-<iframe
-src="https://www.youtube.com/embed/YA1bdQ-YKFg"
-srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/YA1bdQ-YKFg?autoplay=1><img src=https://img.youtube.com/vi/YA1bdQ-YKFg/hqdefault.jpg><span>▶</span></a>"
-frameborder="0"
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>									
-                                </center>
-                            </div>
-                        </div>
-                        <div class="item-3">
-                            <div class="review_item">
-                                <center>
-<iframe
-src="https://www.youtube.com/embed/OyRQYPfWarA"
-srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/OyRQYPfWarA?autoplay=1><img src=https://img.youtube.com/vi/OyRQYPfWarA/hqdefault.jpg><span>▶</span></a>"
-frameborder="0"
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>									
-                                </center>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="use__feed-slider">
-						<section class="regular slider slider1">
-
-							<div class="video">
-								<iframe src="https://youtube.com/embed/OyRQYPfWarA"></iframe>
-							</div class="video">
-							<div class="video">
-								<iframe src="https://youtube.com/embed/HBQM4cj6ZkU"></iframe>
-							</div>
-							<div class="video">
-								<iframe src="https://youtube.com/embed/YA1bdQ-YKFg"></iframe>
-							</div>
-						</section>
-					</div> -->
-                    <div class="use__feed-slider">
-                        <section class="regular slider">
-                            <div>
-                                <div class="use__feed-img">
-                                    <img src="build/images/feed-img1.jpg" alt="" />
-                                </div>
-                                <div class="use__feed-text">
-                                    <h4>"Такой урожай бывает только у тех, кто заботится о своём огороде и выбирает правильные удобрения!"</h4>
-                                    <p>В прошлом году в области лето прошло холодным и дождливым, у соседей все саженцы перебило, никакого урожая не родилось к осени, даже яблок! А нашему саду хоть бы что, удобрили по весне АгроМакс и всё лето у нас шли:
-                                        кабачки, баклажаны, помидоры, огурцы тепличные, ягод уродилось много. Цветник полила - цвели обычные садовые гартенции, астры, пионы, хризантемы почти до ноября. В будущем году решила пойти на рисковый шаг - высадить
-                                        кустовые розы! Всю жизнь о них мечтала, да в нашем климате они мало у кого растут хорошо... А растут они у тех, кто использует правильные подкормки! Раньше не задумывалась об этом, жалко, сколько урожая упущено,
-                                        сколько солений, варенья, кампотов! Всю зиму теперь собираем огурчики в тепличке, уже взошли семена на будущий год - перцы и помидоры. Для всего использую Агро Макс, во всем он меня выручает!</p>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="use__feed-img">
-                                    <img src="build/images/feed-img2.jpg" alt="" />
-                                </div>
-                                <div class="use__feed-text">
-                                    <h4>"Соседи приходят смотреть какого размера у нас в огороде выросли помидоры!"</h4>
-                                    <p>Неожиданно и приятно было получить такой потрясающий урожай! Удобрять землю AgroMax начиная с апреля, высаживали перцы, баклажаны, кабачки, корнишоны, тыкву, огурцы, помидоры, капусту, морковь, патиссоны, брокколи.
-                                        Обработали почву сада под сливами, вишнями, гуршами и всеми ягодами. Такого урожая у нас еще никогда не было! Очень скуцсные овощи, продегустировали и оценили уже в начале июля! Помидоры сорта бычьи сердца - великолепные,
-                                        насыщенные, вкусные и самое главное - большие! Таких больших помидор ни у кого из сосдей нет, приходят в гости смотреть своими глазами, не верят! Всё в моем саду натуральное, всё выращено своими руками без химии,
-                                        это очень радует!</p>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="use__feed-img">
-                                    <img src="build/images/feed-img3.jpg" alt="" />
-                                </div>
-                                <div class="use__feed-text">
-                                    <h4>"Действительно вкусные, не пластиковые плоды"</h4>
-                                    <p>Здравствуйте! У меня не очень большой опыт садоводства, но я уже делаю необычайные успехи! Всего 3 года назад появилась дача, а у муня уже вырастают необычайного размера огурцы, перцы, помидоры. клубника! Земля на участке
-                                        изначально было не очень подходящей для выращивания, на ней трава даже плохо росла. Немного поменяли землю в самых сухих участках, остальное регулярно удобряли АгроМакс концентратом для активации роста растений.
-                                        Результаты великолепные! Растет всё в 2 раза быстрее, цветет обильно, плодов много и они действительно вкусные, не пластиковые! Удобрение органическое, нет смысла даже бояться с ним переборщить, всё пойдет только
-                                        на пользу!</p>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="order">
-            <div class="order__body">
-                <div class="order__title">
-                    <h2>Как сделать заказ на AgroMax® и получить активатор роста уже завтра?</h2>
-                </div>
-                <div class="order__list">
-                    <ul>
-                        <li>
-                            <img src="build/images/order-img1.png" alt="" />
-                            <h4>ЗАЯВКА</h4>
-                            <p>Заполняете простую форму на сайте</p>
-                        </li>
-                        <li>
-                            <img src="build/images/order-img2.png" alt="" />
-                            <h4>КОНСУЛЬТАЦИЯ</h4>
-                            <p>Наш менеджер проконсультирует вас и оформит заказ</p>
-                        </li>
-                        <li>
-                            <img src="build/images/order-img3.png" alt="" />
-                            <h4>ДОСТАВКА</h4>
-                            <p>Надежно упаковываем и отправляем ваш заказ</p>
-                        </li>
-                        <li>
-                            <img src="build/images/order-img4.png" alt="" />
-                            <h4>ПОЛУЧЕНИЕ</h4>
-                            <p>Вы получаете посылку и оплачиваете</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="info">
-            <div class="info__body">
-                <div class="info__title">
-                    <h2>AgroMax<sup>®</sup>
-                    </h2>
-                    <h3>Органическое удобрение
-                        <span>для усиления роста садовых культур</span>
-                    </h3>
-                    <p>На 50% больше урожая каждый месяц</p>
-                </div>
-                <div class="info__list">
-                    <div class="info__list-pack">
-                        <img src="build/images/info-pack.png" alt="" />
-                    </div>
-                    <div class="info__list-body">
-                        <ul>
-                            <li>
-                                1 упаковка = 50 килограммам конского навоза для удобрения
-                            </li>
-                            <li>
-                                100% органическое удобрение, насыщенное питательными веществами
-                            </li>
-                            <li>
-                                Всход любых семян в 2 раза быстрее
-                            </li>
-                            <li>
-                                Стимулирует рост саженцев и черенков
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="info__action">
-                    <div class="info__action-note">
-                        <p>*при заказе набора</p>
-                    </div>
-                    <div class="info__action-top">
-                        <div class="info__action-title">
-                            <p>Успейте оформить заказ
-                                <span>ПО АКЦИИ!</span>
-                            </p>
-                        </div>
-                        <div class="info__action-price dec">
-                            <div class="info__action-price__new">
-                                <p>Специальная цена
-                                    <span>
-										<span class="new_price_val">149</span>
-                                    <span class="new_price_cur">руб</span>
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="info__action-timer">
-                            <p>ДО КОНЦА
-                                <span>АКЦИИ</span> ОСТАЛОСЬ</p>
-                            <div id="countdown-2"></div>
-                        </div>
-                        <div class="info__action-price mob">
-                            <div class="info__action-price__new">
-                                <p>Специальная цена
-                                    <span>
-										<span class="new_price_val">149</span>
-                                    <span class="new_price_cur">руб</span>
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="info__action-form" id="form">
-                        <form class="landing__form">
-                            <select name="country"></select>
-                            <input type="text" name="name" placeholder="Ваше имя">
-                            <input type="tel" name="phone" placeholder="Номер телефона">
-                            <button type="submit">Заказать AgroMax</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+<body  id="EsnfdNdq1g">
+<div class="content"   id="ZNRVfnPBsXQcWv">
+  <div id="top">
+    <div class="padding"> <a href="privacy-policy.html">Privacy policy</a> | <a href="terms.html">Terms and Conditions</a> | <a href="photo.html">Photo gallery</a> | <a href="contact.html">Contacts</a></div>
+  </div>
+  <div id="header">
+    <div class="f_search">
+      <form method="post" action="#" id="vOcGwjesgJX4jA">
+        <p>
+          <input type="text" name="search" value="search..." class="search" onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';" />
+          <input type="submit" value="Go" class="submit" />
+        </p>
+      </form>
     </div>
-    <footer>
-        <div class="footer__body">
+    <div class="title"  id="aOhkmucC">
+      <h1>Blog</</h1>
+    </div>
+  </div>
+  <div id="subheader">
+    <div id="menu">
+    </div>
+  </div>
+  <div id="main">
+    <div class="right_side"  id="31yAWrzCeLRSj3l">
+      <div class="nav">
+        <h2>About me</h2>
+        <div class="padding">
+          <div class="img2"><img src="img/60cc21ce9853502b59c9cb09055757d1.jpg" alt=""  width="25%"/></div>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer euismod ante non diam. Sed eleifend odio sed quam. Sed vulputate, turpis at tincidunt porttitor, est elit consequat metus.</div>
+        <h2>Past Articles</h2>
+ <ul>
+<li><a href="index.html">Kiwi: 10 propiedades del kiwi ¡el rey de las frutas ...</a><br> La papa o patata fue cultivada por primera vez entre los años 8001 y 5000 a. C. [1] en una región que comprendería lo que hoy es el sur de Perú [2] [3] y el noroeste del Altiplano boliviano [4] . [5] Desde entonces se ha extendido por todo el mundo y se ha convertido en un alimento básico en la gran mayoría de países del globo.</li>
+<li><a href="1.html">Historia cultural de la papa - Wikipedia, la enciclopedia ...</a><br> Hace relativamente poco tiempo que la quinoa, o quinua, comenzaba a aparecer en recetarios, blogs y artículos sobre gastronomía.También en nuestros supermercados. De la noche a la mañana se convirtió en uno de los que hoy conocemos como “superalimentos”.. Y muchos nos preguntamos cómo es posible que no la hubiéramos integrado antes a nuestros platos.</li>
+<li><a href="2.html">Beatriz Montañez: de 'El Intermedio' a vivir con 150 euros ...</a><br> IKEA tienda online: Sofás, colchones, decoración, electrodomésticos y muebles para tu dormitorio, salón, baño y cocina. ¡Diseño y decoración para todos en IKEA!</li>
+<li><a href="3.html">Revisa tu inglés para Comidas y bebidas con el juego en ...</a><br> Al kiwi se le podría nombrar como el rey de las frutas por sus increíbles propiedades, y pronto vais a saber por qué.. Sin duda sabéis que el kiwi es una fruta rica en vitamina C, ¿pero sabíais que tiene más del doble de una naranja?¡Consumiendo 2 kiwis al día ¡cubrimos completamente nuestras necesidades diarias de vitamina C!</li>
+<li><a href="4.html">Canónigos: propiedades, beneficios y usos en la cocina</a><br> Proyectos Designing the Right Solution to Meet Your Needs Rivulis delivers complete turnkey solutions of any size, for all customers and across all geographies. We offer the industry’s most extensive micro irrigation product portfolio and a wide range of services based upon our modular design to harvest solutions and through our multiple Global Design Service Centers Designing more than tens ...</li>
+<li><a href="5.html">Quinoa. Qué es y cómo hacerla correctamente - Recetas de ...</a><br> Cómo jugar a Mezcla y Combina. Aparecerá el primer bloque con imagen y tres cajas para que elijas donde guardarlo. Bajo cada caja aparecerá una palabra o frase en inglés. Da clic sobre un bloque para escuchar el audio de la palabra o frase (solo en la versión flash). Da clic sobre el bloque con la imagen y arrastralo a la caja correcta.</li>
+<li><a href="6.html">Plantar tomates: cultivo, plagas, enfermedades, semillas</a><br> Cómo cultivar / marzo 14, 2021 marzo 26, 2021 Hoy vamos a hablar sobre todo lo importante que hay que tener en cuenta a la hora de plantar tomates. El tomate o jitomate es una planta perenne de porte arbustivo que se cultiva anualmente, esto es lo que ponen los textos pero como nadie entiende este lenguaje y esto es ecocosas , que no ...</li>
+<li><a href="7.html">IKEA.com - Tienda de Muebles y Decoración Online - IKEA</a><br> En cuanto a sus compañeros de plato, se lleva bien con espárragos, remolacha cruda o cocida, calabaza asada o en puré, zanahoria, apionabo crudo rallado, hinojo, tomates, maíz, aguacates, pepinos, champiñones y sobre todo patatas, uno de sus acompañantes favoritos. Su textura acompaña bien a casi cualquier receta.</li>
+<li><a href="8.html">Micro Riego | Haciendo que el Micro Riego sea Accesible a ...</a><br> #76 Cómo se mide el qué? 9 K 78 #135 Urasandi ... #2 es mas facil y mucho mas barato cultivar patatas y zanahorias que criar gallinas y cerdos . 4 K 38 #61 Buc #9 Dudo que lo digas por experiencia propia. 1 K 11 #62 XingularOne #9 Claro. ES lo que se llama valor añadido. 1 K 17</li>
+<li><a href="9.html">Qué es el KÉFIR (y cómo hacerlo en casa) | PequeRecetas</a><br> Existen dos tipos de kéfir: de leche y de agua.En realidad, el kéfir de agua y el de leche tienen la misma microflora, pero adaptados a medios distintos.. Kéfir de leche. Es el más extendido. En el kéfir de leche nuestro hongo se nutre de leche de vaca o de cabra.Necesita de la lactosa para fermentar. Su aspecto final es parecido al del yogur batido o la leche, y es por ello que es el ...</li>
+</ul>
+        <br />
+        <h2>Menu</h2>
+<ul>
+<li><a href="index.html">Kiwi: 10 propiedades del kiwi ¡el rey de las frutas ...</a></li>
+<li><a href="1.html">Historia cultural de la papa - Wikipedia, la enciclopedia ...</a><br></li>
+<li><a href="2.html">Beatriz Montañez: de 'El Intermedio' a vivir con 150 euros ...</a><br></li>
+<li><a href="3.html">Revisa tu inglés para Comidas y bebidas con el juego en ...</a><br></li>
+<li><a href="4.html">Canónigos: propiedades, beneficios y usos en la cocina</a><br></li>
+<li><a href="5.html">Quinoa. Qué es y cómo hacerla correctamente - Recetas de ...</a><br></li>
+<li><a href="6.html">Plantar tomates: cultivo, plagas, enfermedades, semillas</a><br></li>
+<li><a href="7.html">IKEA.com - Tienda de Muebles y Decoración Online - IKEA</a><br></li>
+<li><a href="8.html">Micro Riego | Haciendo que el Micro Riego sea Accesible a ...</a><br></li>
+<li><a href="9.html">Qué es el KÉFIR (y cómo hacerlo en casa) | PequeRecetas</a><br></li>
+</ul>
+      </div>
+    </div>
+    <div class="left_side"   id="PWyw2DtYpE">
 
-            <p>ООО "АГРОМАКС" 112984, Россия, Москва, Пушкина улица, 127, ИНН 7712947115; ОГРН 1117569145765 </p>
+      <h2  id="UL26cVk3Mylp">Qué es el KÉFIR (y cómo hacerlo en casa) | PequeRecetas</h2>
+      <div class="img"  id="SuqAncJTOd"><img src="img/db8583ea5e84f92bb411346cea2ee96a.jpg" alt=""  width="30%" id="oezF4CznVG5NeUo"/></div>
+  <span> Recetas para beb&eacute;s y ni&ntilde;os</span> <span> Recetas para beb&eacute;s</span> <span> Recetas para ni&ntilde;os</span> <span> Recetas familiares</span> <span> Recetas para cenas r&aacute;pidas</span> <span> Recetas para fiestas infantiles</span> <span> Men&uacute;s semanales para ni&ntilde;os</span> <span> Alimentacion para bebes y ni&ntilde;os y alimentaci&oacute;n infantil</span> <span> Concursos y Sorteos</span> <span> Recetas para beb&eacute;s, ni&ntilde;os y toda la familia </span> <span> Recetas Navidad</span> <span> Recetas Thermomix</span> <span> Suscribete al Newsletter</span> <h2> Cómo hacer pestiños caseros con miel o azúcar </h2> <h2> 7 cenas para adelgazar (ligeras y saludables) </h2> <h2> 15 recetas de desayunos con AVENA para una dieta saludable </h2> <h2> Porrusalda (receta de sopa de puerros tradicional) </h2> <h2> Carrilleras de cerdo al vino tinto (la MEJOR receta) </h2> PequeRecetas <span> <span> Alimentación</span> </span> Qué es el KÉFIR (y cómo hacerlo en casa) <h1> Qué es el KÉFIR (y cómo hacerlo en casa) </h1> <span> </span> <span> Pin It </span> <span> Por Mamá al Día </span> <span> | 2 votos Cargando... </span> <span> <p> ¿Habéis oído hablar del <strong> kéfir</strong> ? Es el probiótico de moda, un «ser vivo» que podemos cultivar en casa, con propiedades extraordinarias. Aunque tal vez muchos todavía no lo conozcan, en realidad el <strong> kéfir </strong> <strong> de leche </strong> es uno de los productos lácteos más antiguos que se conocen, consumido durante miles de años y originario del Cáucaso.</p> <p> Hemos dicho <strong> kéfir de leche</strong> porque también existe otra variedad, el <strong> kéfir de agua</strong> . Esta <strong> bebida fermentada </strong> tiene múltiples propiedades: entre los <strong> beneficios del kéfir </strong> podemos citar que es un<strong> protector del estómago</strong> <strong> ,  </strong> <strong> aumenta las defensas </strong> y ayuda a<strong> regular la flora intestinal. </strong> </p> <p> Hoy en día podemos encontrar <strong> kéfir </strong> elaborado industrialmente en la sección de refrigerados del supermercado, junto a los yogures. Pero siendo un ser vivo, lo más conveniente es <strong> cultivarlo en casa</strong> para aprovechar al máximo todos sus beneficios, y os contaremos cómo. <span> </span> </p> <p> INDICE DE CONTENIDOS</p> Los principales beneficios del kéfir ¿Qué es el kéfir? Tipos de kéfir Kéfir de leche Kéfir de agua Propiedades del kéfir Kéfir para el sistema digestivo Kéfir para aumentar las defensas Contraindicaciones del kéfir Cómo hacer kéfir casero Cómo cuidar y conservar el kéfir Cómo tomar kéfir <h2> <span> Los principales beneficios del kéfir</span> </h2> Es un <strong> alimento probiótico </strong> más potente que el yogur Es un aliado para mantener la salud del sistema digestivo, <strong> regulando la flora intestinal</strong> <strong> Ayuda a digerir más fácilmente</strong> Ayuda a <strong> mantener altas las defensas</strong> <strong> Puedes hacerlo en casa</strong> , con paciencia y cuidados <h2> <span> ¿Qué es el kéfir?</span> </h2> <p> Imagen: Susy Morris </p> <p> Como decíamos, el <strong> kéfir </strong> es una bebida fermentada, como el yogur. Pero a diferencia de este último, posee más <strong> macrobióticos</strong> . El <strong> kéfir </strong> se fermenta a partir de levaduras (hongos) y bacterias.</p> <p> El <strong> kéfir </strong> es un hongo, cuyos gránulos se asemejan a la coliflor. Este hongo se nutre de leche fresca y la fermenta, obteniendo una bebida parecida a un yogur batido, que es la que podemos consumir con grandes beneficios para nuestro cuerpo. La mezcla compleja de bacterias como lactobacilos, leuconostococos, lactococos y acetobacterias, y levaduras (fermentadoras de la lactosa y no fermentadoras) que lo componen son las responsables de sus <strong> propiedades protectoras y reguladoras del sistema digestivo</strong> .</p> <p> Hablamos de la leche porque el más extendido es el <strong> kéfir de leche</strong> , pero como veremos existen dos tipos diferentes:</p> <h2> <span> Tipos de kéfir</span> </h2> <p> Imagen: Simon A. Eugster </p> <p> Existen dos tipos de <strong> kéfir</strong> : de leche y de agua. En realidad, el <strong> kéfir de agua</strong> y el de leche tienen la misma microflora, pero adaptados a medios distintos.</p> <h3> <span> Kéfir de leche</span> </h3> <p> Es el más extendido. En el <strong> kéfir de leche </strong> nuestro hongo se nutre de leche de vaca o de cabra. Necesita de la lactosa para fermentar. Su aspecto final es parecido al del yogur batido o la leche, y es por ello que es el más difundido (puedes <strong> comprar los nódulos de kéfir de leche online</strong> aquí )</p> <p> La diferencia con el yogur está en la fermentación: mientras que el yogur fermenta gracias al efecto de dos bacterias (Lactobacillus bulgaricus y Streptococcus thermophilus), el <strong> kéfir </strong> lo hace en base a una combinación de diferentes bacterias y levaduras. Además, como hemos dicho al principio, en la fermentación se produce una pequeña cantidad de alcohol y CO2, por lo que es ligeramente gaseoso.</p> <h3> <span> Kéfir de agua</span> </h3> <p> La diferencia del <strong> kéfir de agua </strong> con el de leche es que <strong> no necesita lactosa para fermentar</strong> , lo hace gracias al azúcar que se le agrega al agua para desencadenar la fermentación. Es por ello que es <strong> ideal para las personas con intolerancia a la lactosa o veganas </strong> . Su apariencia y sabor es parecido al de una limonada ligeramente gaseosa (puedes <strong> comprar los nódulos de kéfir de agua online</strong> aquí ).</p> <p> Algunos opinan que el <strong> kéfir de agua </strong> tiene mayores propiedades que el de leche, y también menos contraindicaciones. Aunque partiendo de la misma microflora, las <strong> propiedades del kéfir </strong> son muy similares en ambos casos.</p> <h2> <span> Propiedades del kéfir</span> </h2> <p> Imagen: Bob </p> <p> Los principales <strong> beneficios del kéfir </strong> son su <strong> alto contenido de probióticos</strong> , <strong> calcio y vitaminas</strong> . Sin duda cuando pensamos en <strong> probióticos</strong> , nos viene a la mente el yogur, pero nuestro hongo es <strong> más rico en probióticos que el yogur</strong> . Y justamente esta característica, la de ser un alimento probiótico (que contiene organismos vivos), es la responsable de gran parte de las <strong> propiedades del kéfir</strong> .</p> <p> <strong> ¿Sabías que el chucrut también es un alimento probiótico?</strong> </p> <h3> <span> Kéfir para el sistema digestivo</span> </h3> <p> Como hemos dicho, se trata de un <strong> alimento probiótico</strong> , y como tal:</p> Mantiene la <strong> microflora intestinal</strong> , y por lo tanto es útil para reequilibrarla en caso de <b> trastornos intestinales</b>  (ayuda en casos de <b> colon irritable </b> o ciertas clases de <strong> úlceras</strong> ). <strong> Regula el tránsito intestinal</strong> Es bien tolerado por los <strong> intolerantes a la lactosa</strong> . Esto se debe a que las bacterias de ácido láctico son más baja en estos tipos de alimentos fermentados que la leche. Y también se puede consumir un <strong> kéfir </strong> 100% libre de lactosa, el que se hace con agua azucarada. <strong> Ayuda a digerir más fácilmente </strong> los macronutrientes (grasas, proteínas, etc) <strong> Sintetiza las vitaminas </strong> presentes en los alimentos de manera más eficiente. <h3> <span> Kéfir para aumentar las defensas</span> </h3> Algunos de los probióticos presentes en el kefir, en particular el  Kefiri Lactobacillus , presente solo en esta bebida, podrían tener una <strong> potente acción antibacteriana</strong> . Es lo que afirma un estudio científico publicado por la Biblioteca Nacional de Medicina de Estados Unidos : en este estudio se ha demostrado que este probiótico puede inhibir la proliferación de bacterias dañinas como la  <strong> salmonella</strong>  y la<strong>  E. Coli</strong> <strong> Fortalece el sistema inmunitario</strong> , preparándolo para afrontar los ataques externos (infecciones) de manera más eficiente <strong> Protege </strong> <strong> el organismo </strong> de las <strong> toxinas y agentes patógenos.</strong> <p> Por todos estos motivos, el consumo de alimentos probióticos, y en particular del <strong> kéfir </strong> que es el más potente, es aconsejado en especial en momentos de estrés; también en caso de convalecencia, toma de antibióticos, etc. Gracias a los alimentos probióticos podremos tener un sistema digestivo más sano y eficaz y una protección adicional sobre nuestro sistema de defensas.</p> <h3> <span> Contraindicaciones del kéfir</span> </h3> <p> Aunque es generalmente muy bien tolerado, es mejor tomarlo con cautela o consultar al propio médico cuando:</p> En caso de <strong> estómago sensible</strong> . Hay personas a los que los probióticos les pueden sentar mal, produciendo síntomas como diarrea, malestar o hinchazón abdominal. Si notáis estos síntomas después de tomar kéfir, lo único que tenéis que hacer es suspender la toma. <strong> Tratamiento con </strong> <b> inmunosupresores</b> . En este caso la acción de las bacterias y levaduras podría aumentar las posibilidades de contraer infecciones. <p> Los posibles efectos adversos (que son muy raros) se presentan con mayor frecuencia con el consumo de kéfires caseros, ya que son más concentrados que los que podemos comprar en comercio.</p> <h2> <span> Cómo hacer kéfir casero</span> </h2> <p> Imagen: barimages.com </p> <p> Hemos ya explicado que el <strong> kéfir </strong> está compuesto por organismos vivos que fermentan en un medio, que puede ser la leche o el agua azucarada. Aunque podemos comprar la bebida fermentada ya lista en el supermercado, los <strong> beneficios del kéfir </strong> son mucho más potentes si lo cultivamos en casa. Es un proceso que requiere mucha paciencia y cuidados, a continuación os lo detallamos:</p> Lo primero que necesitamos es procurarnos los <strong> nódulos o gránulos de kéfir</strong>  (puedes comprarlos online aquí ) En un recipiente de cristal con tapa, colocamos los <strong> nódulos de kéfir</strong> (normalmente 3 cucharadas por litro de líquido) y la <strong> leche entera </strong> o el <strong> agua azucarada </strong> (3 cucharadas de azúcar de caña integral y el zumo de 1/2 limón por cada litro de agua). No debemos llenar del todo el frasco, solo 2/3 partes, ya que la fermentación producirá gas que necesita espacio. Dejamos reposar a temperatura ambiente (idealmente a 20 grados o menos) 12-36 horas (normalmente 24 horas) y si es posible removiendo o agitando cada 8 horas o menos. Tras ese tiempo ya podemos comenzar a consumir el líquido producido. Simplemente se cuela el líquido resultante con un colador o filtro. Después se vuelve a repetir el proceso con más leche o agua. El líquido debe cambiarse cada 24 horas, aunque no vayamos a consumirlo. Hay quien lava el frasco y los nódulos cada 3 0 4 días con agua, pero otros no lo lavan nunca o pocas veces. En caso de que los lavéis, hacedlo con agua mineral, ya que el agua del grifo tiene cloro y podría destruir la población microbiana. <h3> <span> Cómo cuidar y conservar el kéfir</span> </h3> <p> Algunas cosas para tener en cuenta cuando hacemos <strong> kéfir casero</strong> :</p> Se recomienda usar <strong> leche entera fresca</strong> . Para un kéfir más líquido se añade más cantidad de leche, y para uno espeso más cantidad de nódulos. En la velocidad de la fermentación influye la temperatura ambiente, la temperatura de la leche y la cantidad de nódulos. La leche no debe sobrepasar los 35º y la temperatura ambiental debe ser en torno a los 20º.5​ El <strong> hongo de kéfir</strong> <strong> crece continuamente</strong> . Periódicamente debemos ir eliminando las partes malas y regalando a amigos y parientes trozos nuevos para que puedan hacer su propio <strong> kéfir</strong> . Los utensilios usados (recipiente y colador) no deben ser de aluminio, porque este material no es estable en un medio ácido, como el kéfir, y podría transferirle partículas nocivas. El líquido obtenido tiene un sabor ligeramente ácido y un poco de alcohol (1%), algo carbonatada. Se puede endulzar con azúcar o edulcorante, es mejor no usar miel porque podría reducir la población microbiana. <h4> Conservación</h4> <p> Cuando no se deseamos tomar leche kefirada durante algún tiempo podemos conservar los nódulos de diferentes maneras:</p> <strong> Nevera:</strong>  Se mantiene hasta 14 días conservado en leche fresca a 4°C. Para que la conservación sea mejor se debe cambiar la leche pasados algunos días. En el caso de <strong> kéfir de agua</strong> , se conserva en agua mineral con azúcar durante 10 días, enjuagando los gránulos previamente. Una vez que queramos reutilizar los nódulos, debemos reactivarlos dejándolos en leche fresca o agua azucarada por 2 o 3 días, ya que fermentarán más lentamente. <strong> Congelado: </strong> Debemos lavar y escurrir bien el hongo, introducirlo en una bolsa de plástico o tupper y congelarlo. Así aguanta mucho tiempo. Para descongelarlo, lo sacamos del congelador y lo dejamos descongelar en la nevera. Una vez descongelado, preparamos el <strong> kéfir</strong>  como hemos visto durante tres días, desechando el líquido. Tras estos primeros días se puede volver a consumir normalmente. <h2> <span> Cómo tomar kéfir</span> </h2> <p> Imagen: Bad Reichenhaller </p> <p> El <strong> kéfir </strong> es una bebida que puede tomarse como cualquier otra. El de leche tiene un sabor algo ácido, por lo que se puede endulzar como hemos visto anteriormente.</p> <p> En el caso del <strong> kéfir de leche</strong> , podemos usarlo del mismo modo que haríamos con el yogur: en el desayuno acompañado de cereales, muesli o fruta fresca; para hacer <strong> batidos de fruta </strong> o<strong> cremas de verdura , </strong> o un aderezo con hierbas aromáticas como el de la imagen; también puedes usarlo para cocinar, haciendo bizcochos u otras recetas con yogur, pero ten en cuenta que en la cocción perderá muchas de sus propiedades.</p> <p> En cuanto a la <strong> cantidad</strong> , no hay una indicación precisa; podéis comprobar vosotros mismos cuál es la cantidad ideal en vuestro caso.</p> <p> Imagen principal: Claudio Bisighello </p> <p> <span> <span> <span> Algunos enlaces aquí publicados son de afiliados. No obstante los artículos recomendados responden a una decisión de criterio del equipo de Pequerecetas, no </span> <span> existiendo</span> <span>  ningún incentivo por parte de las marcas.</span> </span> </span> </p> </span> <span> <h3> <span> 7 comentarios sobre</span> &#8220;Qué es el KÉFIR (y cómo hacerlo en casa)&#8221;</h3> </span> <span> 1 </span> <p> <p> Hola, me gustaría saber a qué os referís cuando decís » Esto se debe a que las bacterias de ácido láctico son más baja en estos tipos de alimentos fermentados que la leche. Y también se puede consumir un kéfir 100% libre de lactosa, el que se hace con agua azucarada.» ¡¡¡¡pero vamos a ver !!!! cómo no va a ser bien aceptado por intolerantes a la lactosa el kéfir de agua si solo lleva agua ES DECIR NO TIENE LACTEO. ahora bien, no puede sustituir a los lácteos como fuente de calcio. ¿¿¿Y lo de que se debe a el menor nivel de bacterias de ácido láctico??? en serio me encantaría saber qué quiere decir eso.</p> </span> </p> Comentario de Lucía <span> 2 </span> <p> <p> YO ESTOY TOMANDO KÉFIR DE LECHE Y DE AGUA Y ME VA MUY BIEN, DE HECHO YA NO PUEDO PASAR SIN EL KÉFIR</p> </span> </p> Comentario de MERCEDES PRIETO RODRIGUEZ <span> 3 </span> <p> <p> Como lo preparas .Me gustaría probar .gracias</p> </span> </p> Comentario de Hilsa <span> 4 </span> <p> <p> Hasta hace un par de meses todo iba bien, durante un par de años . pero, de prontpo, durante todo el verano y hasta ahora . el Kéfir sigue transformando ñla leche pero . «NO CRECE» ¿ Qué puedo estar haciendo mal ? o . ¿es normal ???</p> <p> Gracias.</p> <p> Saludos desde Murcia</p> </span> </p> Comentario de CARLOS JUSTO GÓMEZ GÓMEZ <span> 5 </span> <p> <p> Yo tuve el helycobacter pylori y tenia el estoma y la flora intestinal destrozada y gracias al kefir he vuelto a la normalidad y ya no lo dejo</p> </span> </p> Comentario de María Otero <span> 6 </span> <p> <p> Hace años que tomó kéfir de leche.<br/> En una charla oí que el kéfir es un alimento frío y que en invierno no se debería tomar.<br/> Esto es verdad?<br/> Yo lo sigo tomando todo el año.<br/> Tiene algo que ver con tener más frío en invierno.<br/> Gracias</p> </span> </p> Comentario de Blanca <span> 7 </span> <p> <p> Me preocupa la invormación errónea que publican porque induce a los lectores a realizar prácticas de cultivo peligrosas. Tenemos a más de 300 hospitalizaciones anuales, por país, por cultivar al kéfir en agua.<br/> No sólo no tiene más propiedades que el de leche, sino que, varias de las cepas que prosperan en leche, perecen en un cultivo azucarado como el de agua.</p> <p> KÉFIR DE AGUA Y HOSPITALIZACINES<br/> (1) Kefir-Kombucha: riesgos para la salud en su uso como medicina alternativa o complementaria” “Rev Pat Med y Quir Uru Noviembre 2011;2(1):23-28 ©2011 Prensa Médica Latinoamericana</p> <p> Como el de Kombucha, son cultivos empobrecidos y, sin las bacterias de un kéfir completo, se pierde la protección contra las patógenas. Más de 300 hospitalizaciones anuales, por país, son demasiadas hospitalizaciones como para no asegurar la información antes de difundirla. Es una cuestión de responsabilidad.</p> <p> Y el kéfir no es ningún hongo, como informan Vds. Es una estructua de polisacáridos elaborada por el “Lactobacillus kefiranofaciens subsp. kefirgranum” que, según algunos expertos, requiere de la presencia de encimas naturalmente presenes en los estómagos de los animales, que los campesionos emplean para elaborar los recipientes en los que almacenan la leche, para que se produzcan los nódulos característicos del kéfir. En laboratorio, sólo con el kefirgranum, no se producen.</p> <p> Les ruego que hagan saber a los interesados por este cultivo, los riesgos que corren si no se realiza un cultivo correcto.</p> </span> </p> Comentario de Adolfo <h3> Deja un comentario Cancelar respuesta </h3> <p> Este sitio usa Akismet para reducir el spam. Aprende cómo se procesan los datos de tus comentarios .</p> <h4> Por edades</h4> A partir de 6 meses A partir de 9 meses A partir de 1 a&ntilde;o Recetas familiares <h4> Recetas diarias</h4> Men&uacute;s semanales Desayunos Aperitivos y tapas Comidas Postres Meriendas Cenas r&aacute;pidas Bebidas <h4> Recetas especiales</h4> Recetas para celiacos Recetas sin leche Recetas sin huevo <h4> Por ocasiones</h4> Fiestas y cumplea&ntilde;os Recetas de Carnaval Recetas de Navidad Recetas de Halloween <h4> Por categoria</h4> Arroz Carnes Cremas y Pur&eacute;s Dulces Ensaladas Frutas Huevos Legumbres Pan y masas Pasta Patatas Pescado Pollo Sandwiches Sopas Tartas Verduras <h4> Por t&eacute;cnica</h4> Thermomix Olla express Guisos Microondas <h3> Lo m&aacute;s buscado</h3> <h4> Por categor&iacute;a</h4> Recetas de postres Recetas de pollo Recetas de arroz Recetas de ensaladas Recetas de pescado Recetas de bizcochos <h4> Las m&aacute;s buscadas</h4> Crema de calabaza Pollo al horno Croquetas Crema de calabacin Albondigas en salsa Berenjenas rellenas <h4> Cenas r&aacute;pidas</h4> Pastel de verduras Ensalada de pasta Hamburguesas caseras Ensaladilla rusa Macarrones con chorizo Tortilla de espinacas <h4> Reposter&iacute;a y dulces</h4> Bizcocho de yogur Brownies Tarta de queso Bizcocho de chocolate Tarta de manzana Tarta tres chocolates <h4> Alimentación</h4> Quinoa Jengibre Semillas de Chía Kiwi Curcuma Maca andina @Copyright 2020, Kidealia Media SL <span> Contacto</span> <span> Publicidad</span> <span> Política de Privacidad y Aviso Legal</span> <span> Política de Cookies</span> <span> Condiciones de uso</span>
+  <hr />
+<iframe width="530" height="315" src="https://www.youtube.com/embed/ijd60m9zOh0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-            <a href="/politic.html">Политика конфиденциальности</a>
-            <a href="/oferta.html">Публичная оферта</a>
-
-        </div>
-    </footer>
-    <script src="build/js/slick.min.js"></script>
-    <script src="build/js/jquery.time-to.js"></script>
-    <script src="build/js/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-url-parser/2.3.1/purl.min.js"></script>
-    <script src="leadprofit.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/owl.carousel.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("form").leadprofit({
-                hash: "debb171f-3e22-4557-9c7e-ca5c2027dbe1"
-            }).leadprofitSubmit({
-                confirmUrl: 'confirm.html',
-                counterParams: {
-                    country: "{country}",
-                    version: document.location.pathname.replace(/\/+/g, '').replace('landings', '').replace('index.html', '').replace('index2.html', '').replace('confirm.html', '')
-                }
-            });
-        });
-    </script>
-    <script src="price.js"></script>
-    <script>
-        $(".slide-one").owlCarousel({
-            margin: 0,
-            nav: false,
-            startPosition: 'debb171f-3e22-4557-9c7e-ca5c2027dbe1',
-            loop: true,
-            center: true,
-            items: 1,
-            dots: true,
-        });
-    </script>
-	
-	<!-- Facebook Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '471946480608219');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=471946480608219&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
+      <p class="date" id="I76KDQ3C5rR">Posted by Jack <img src="images/more.gif" alt="" /> <a href="#">Read more</a> <img src="images/comment.gif" alt="" /> <a href="#">Comments (15)</a> <img src="images/timeicon.gif" alt="" /> 2021.04.03 10:57</p>
+      <br />
+    </div>
+  </div>
+  <div id="footer">
+    <div class="padding"> Copyright &copy; BlueBlog |</div>
+	<p id="fCVqruNmQuqfAS"></p>
+  </div>
+</div>
 </body>
-
 </html>
